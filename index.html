@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hyuntae Park | Analytics Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+    h1, h2, h3 {
+      color: #facc15;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 2.4rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      border-bottom: 1px solid #1f2937;
+      padding-bottom: 0.25rem;
+    }
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .tagline {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+    .pill {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      margin: 0.15rem;
+      border-radius: 999px;
+      background: #111827;
+      border: 1px solid #1f2937;
+      font-size: 0.8rem;
+    }
+    .section-box {
+      background: #020617;
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid #1f2937;
+      margin-top: 0.75rem;
+    }
+    ul {
+      margin-top: 0.4rem;
+    }
+    li {
+      margin-bottom: 0.35rem;
+    }
+    .subtitle {
+      color: #9ca3af;
+      font-size: 0.95rem;
+    }
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>👋 Hi, I'm Hyuntae Park</h1>
+      <p class="tagline">
+        Marketing Analytics · Business Analytics · Data Enthusiast
+      </p>
+      <p class="subtitle">
+        Graduate student focused on data-driven decision making, with experience in SQL, Python, Tableau, and SAP S/4HANA.
+      </p>
+    </header>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="section-box">
+        <h3>Languages</h3>
+        <span class="pill">Python</span>
+        <span class="pill">R</span>
+        <span class="pill">SQL</span>
+
+        <h3>Analytics &amp; Visualization</h3>
+        <span class="pill">Tableau</span>
+        <span class="pill">Excel</span>
+        <span class="pill">Power BI</span>
+
+        <h3>Data &amp; Systems</h3>
+        <span class="pill">MySQL</span>
+        <span class="pill">phpMyAdmin</span>
+        <span class="pill">SAP S/4HANA (O2C, MM)</span>
+        <span class="pill">Git &amp; GitHub</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Featured Projects</h2>
+
+      <div class="section-box">
+        <h3>NBA Analytics – LeBron vs Kareem</h3>
+        <p class="subtitle">
+          Python · Tableau · Kaggle NBA data
+        </p>
+        <ul>
+          <li>Analyzed long-term scoring trends and efficiency of NBA players.</li>
+          <li>Built interactive Tableau dashboards to compare career trajectories.</li>
+        </ul>
+        <p><a href="https://github.com/hyuntaepark-gh" target="_blank">View on GitHub</a></p>
+      </div>
+
+      <div class="section-box">
+        <h3>TradingDB – SQL &amp; Database Design</h3>
+        <p class="subtitle">
+          MySQL · ERD · Normalization
+        </p>
+        <ul>
+          <li>Designed a relational schema for clients, contracts, and companies.</li>
+          <li>Implemented queries for reporting, aggregation, and integrity checks.</li>
+        </ul>
+        <p><a href="https://github.com/hyuntaepark-gh" target="_blank">View on GitHub</a></p>
+      </div>
+
+      <div class="section-box">
+        <h3>SAP S/4HANA Learning Labs</h3>
+        <p class="subtitle">
+          Order-to-Cash · Materials Management
+        </p>
+        <ul>
+          <li>Executed full O2C and MM processes using the Global Bike dataset.</li>
+          <li>Documented each step and connected logistics with financial postings.</li>
+        </ul>
+        <p><a href="https://github.com/hyuntaepark-gh" target="_blank">Process summaries on GitHub</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="section-box">
+        <p>Email: <a href="mailto:hyuntae.park.9@gmail.com">hyuntae.park.9@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/hyuntaepark-gh" target="_blank">github.com/hyuntaepark-gh</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/hyuntae-park-in" target="_blank">linkedin.com/in/hyuntae-park-in</a></p>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> Hyuntae Park. Built with GitHub Pages.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
