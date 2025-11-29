@@ -16,6 +16,38 @@
       margin: 0 auto;
       padding: 2rem 1.5rem 3rem;
     }
+
+    /* ====== NAV BAR ====== */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(2, 6, 23, 0.95);
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      padding: 0.5rem 1.2rem;
+      margin-bottom: 1.8rem;
+      position: sticky;
+      top: 1rem;
+      z-index: 20;
+      backdrop-filter: blur(6px);
+    }
+    .nav-logo {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #facc15;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      margin-left: 1.2rem;
+      font-size: 0.9rem;
+      color: #9ca3af;
+      text-decoration: none;
+    }
+    .nav-links a:hover {
+      color: #facc15;
+    }
+
     h1, h2, h3 {
       color: #facc15;
       margin-bottom: 0.5rem;
@@ -74,7 +106,19 @@
   </style>
 </head>
 <body>
-  <div class="wrapper">
+  <div class="wrapper" id="top">
+
+    <!-- ===== NAV BAR ===== -->
+    <nav class="nav">
+      <div class="nav-logo">Hyuntae Park · Analytics</div>
+      <div class="nav-links">
+        <a href="#top">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
     <header>
       <h1>👋 Hi, I'm Hyuntae Park</h1>
       <p class="tagline">
@@ -85,7 +129,7 @@
       </p>
     </header>
 
-    <section>
+    <section id="skills">
       <h2>Skills</h2>
       <div class="section-box">
         <h3>Languages</h3>
@@ -106,7 +150,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="projects">
       <h2>Featured Projects</h2>
 
       <div class="section-box">
@@ -146,7 +190,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="contact">
       <h2>Contact</h2>
       <div class="section-box">
         <p>Email: <a href="mailto:hyuntae.park.9@gmail.com">hyuntae.park.9@gmail.com</a></p>
