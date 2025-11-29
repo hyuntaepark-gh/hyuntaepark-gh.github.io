@@ -48,6 +48,35 @@
       color: #facc15;
     }
 
+    /* ====== HERO / PROFILE ====== */
+    header {
+      margin-bottom: 1.5rem;
+    }
+    .profile-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 2px solid #1f2937;
+      flex: 0 0 auto;
+      background: #020617;
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile-text {
+      flex: 1 1 260px;
+    }
+
     h1, h2, h3 {
       color: #facc15;
       margin-bottom: 0.5rem;
@@ -118,17 +147,27 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
+        <a href="/kr/">KR</a>
       </div>
     </nav>
 
+    <!-- ===== HERO WITH PROFILE PHOTO ===== -->
     <header>
-      <h1>👋 Hi, I'm Hyuntae Park</h1>
-      <p class="tagline">
-        Marketing Analytics · Business Analytics · Data Enthusiast
-      </p>
-      <p class="subtitle">
-        Graduate student focused on data-driven decision making, with experience in SQL, Python, Tableau, and SAP S/4HANA.
-      </p>
+      <div class="profile-wrapper">
+        <div class="profile-photo">
+          <!-- 프로필 사진 경로: img/profile.jpg -->
+          <img src="img/profile.jpg" alt="Hyuntae Park profile photo" />
+        </div>
+        <div class="profile-text">
+          <h1>👋 Hi, I'm Hyuntae Park</h1>
+          <p class="tagline">
+            Marketing Analytics · Business Analytics · Data Enthusiast
+          </p>
+          <p class="subtitle">
+            Graduate student focused on data-driven decision making, with experience in SQL, Python, Tableau, and SAP S/4HANA.
+          </p>
+        </div>
+      </div>
     </header>
 
     <!-- ===== ABOUT ME ===== -->
