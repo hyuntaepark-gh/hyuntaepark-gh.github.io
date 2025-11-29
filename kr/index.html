@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>현태 박 | 애널리틱스 포트폴리오</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(2, 6, 23, 0.95);
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      padding: 0.5rem 1.2rem;
+      margin-bottom: 1.8rem;
+      position: sticky;
+      top: 1rem;
+      z-index: 20;
+      backdrop-filter: blur(6px);
+    }
+    .nav-logo {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #facc15;
+      font-size: 0.95rem;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .nav-links a {
+      margin-left: 0.8rem;
+      font-size: 0.9rem;
+      color: #9ca3af;
+      text-decoration: none;
+    }
+    .nav-links a:hover {
+      color: #facc15;
+    }
+    .theme-toggle {
+      margin-left: 0.8rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      background: #020617;
+      color: #e5e7eb;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .theme-toggle:hover {
+      background: #111827;
+    }
+
+    header {
+      margin-bottom: 1.5rem;
+    }
+    .profile-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 2px solid #1f2937;
+      flex: 0 0 auto;
+      background: #020617;
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile-text {
+      flex: 1 1 260px;
+    }
+
+    h1, h2, h3 {
+      color: #facc15;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 2.4rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      border-bottom: 1px solid #1f2937;
+      padding-bottom: 0.25rem;
+    }
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .tagline {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+    .pill {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      margin: 0.15rem;
+      border-radius: 999px;
+      background: #111827;
+      border: 1px solid #1f2937;
+      font-size: 0.8rem;
+    }
+    .section-box {
+      background: #020617;
+      border-radius: 0.75rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid #1f2937;
+      margin-top: 0.75rem;
+    }
+    ul {
+      margin-top: 0.4rem;
+    }
+    li {
+      margin-bottom: 0.35rem;
+    }
+    .subtitle {
+      color: #9ca3af;
+      font-size: 0.95rem;
+    }
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      background: #111827;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #1f2937;
+      text-decoration: none;
+    }
+
+    /* LIGHT MODE */
+    body.light {
+      background: #f9fafb;
+      color: #111827;
+    }
+    body.light .nav {
+      background: rgba(249, 250, 251, 0.9);
+      border-color: #e5e7eb;
+    }
+    body.light .nav-logo {
+      color: #d97706;
+    }
+    body.light .nav-links a {
+      color: #4b5563;
+    }
+    body.light .nav-links a:hover {
+      color: #b45309;
+    }
+    body.light h1,
+    body.light h2,
+    body.light h3 {
+      color: #b45309;
+    }
+    body.light .section-box {
+      background: #ffffff;
+      border-color: #e5e7eb;
+    }
+    body.light .pill {
+      background: #f3f4f6;
+      border-color: #e5e7eb;
+      color: #111827;
+    }
+    body.light .footer {
+      color: #6b7280;
+    }
+    body.light .theme-toggle {
+      background: #f9fafb;
+      color: #111827;
+      border-color: #d1d5db;
+    }
+    body.light .btn {
+      background: #111827;
+      color: #f9fafb;
+      border-color: #111827;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper" id="top">
+
+    <nav class="nav">
+      <div class="nav-logo">Hyuntae Park · Analytics</div>
+      <div class="nav-links">
+        <a href="/kr/#top">홈</a>
+        <a href="/kr/#about">소개</a>
+        <a href="/kr/#experience">경력</a>
+        <a href="/kr/#skills">역량</a>
+        <a href="/kr/#projects">프로젝트</a>
+        <a href="/kr/#contact">연락처</a>
+        <a href="/">EN</a>
+        <button id="themeToggle" class="theme-toggle">Light</button>
+      </div>
+    </nav>
+
+    <header>
+      <div class="profile-wrapper">
+        <div class="profile-photo">
+          <img src="../img/profile.jpg" alt="Hyuntae Park profile photo" />
+        </div>
+        <div class="profile-text">
+          <h1>👋 안녕하세요, 현태 박입니다</h1>
+          <p class="tagline">
+            마케팅 애널리틱스 · 비즈니스 애널리틱스 · 데이터 분석
+          </p>
+          <p class="subtitle">
+            SQL, Python, Tableau, SAP S/4HANA 경험을 바탕으로 데이터로 비즈니스 의사결정을
+            지원하는 애널리스트를 목표로 하고 있습니다.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>소개</h2>
+      <div class="section-box">
+        <p>
+          저는 마케팅 애널리틱스와 비즈니스 애널리틱스를 전공하면서, 고객 행동을 데이터로
+          설명하고 의사결정에 도움이 되는 인사이트를 찾는 것에 관심이 많습니다. SQL, Python,
+          시각화 도구를 활용해서 복잡한 데이터를 이해하기 쉬운 스토리로 정리하는 일을 좋아합니다.
+        </p>
+        <p>
+          이전에는 미국 뉴저지의 Grand SK Corp에서 시설 관리 및 인사(HR) 업무를 담당했습니다.
+          회사 사무실과 창고 관리, 차량·보안·허가 관련 업무부터 직원 데이터 관리, 평가 자료 정리
+          등 실제 비즈니스 운영과 사람, 데이터를 모두 다뤄본 경험이 있습니다. 이 경험 덕분에
+          지금은 데이터를 볼 때 항상 실제 업무와 사람을 함께 떠올리며 분석하려고 합니다.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>경력</h2>
+      <div class="section-box">
+
+        <h3>Grand SK CORP · East Rutherford, NJ</h3>
+
+        <p class="subtitle">Property Management Assistant · 2021년 12월 – 2022년 10월</p>
+        <ul>
+          <li>회사 사무실, 창고, 보관 시설 등 전반적인 시설 운영과 유지 보수를 관리했습니다.</li>
+          <li>시청 및 관련 기관과 협의하여 각종 허가, 검사 대응 및 안전 관련 요구사항을 처리했습니다.</li>
+          <li>회사 차량, 톨 관리, 점검 일정, 경미한 IT 문제 처리 등 일상 운영에 필요한 요소들을 관리했습니다.</li>
+          <li>오피스 리모델링과 비품 구매를 주도하며 효율적인 근무 환경 조성에 기여했습니다.</li>
+        </ul>
+
+        <p class="subtitle">Assistant Manager, Human Resources · 2021년 10월 – 2022년 10월</p>
+        <ul>
+          <li>직원 인사 데이터, 근태 기록, 평가 자료 등 HR 관련 데이터를 정리·관리했습니다.</li>
+          <li>인턴 및 정규직 채용, 온보딩, 오리엔테이션과 교육 프로그램을 지원했습니다.</li>
+          <li>연간 평가 결과를 정리하여 경영진 보고 자료에 활용했습니다.</li>
+          <li>사내 행사 및 복리후생 관련 업무를 조율하며 조직 내 커뮤니케이션을 지원했습니다.</li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>역량</h2>
+      <div class="section-box">
+        <h3>언어</h3>
+        <span class="pill">Python</span>
+        <span class="pill">R</span>
+        <span class="pill">SQL</span>
+
+        <h3>분석 &amp; 시각화</h3>
+        <span class="pill">Tableau</span>
+        <span class="pill">Excel</span>
+        <span class="pill">Power BI</span>
+
+        <h3>데이터 &amp; 시스템</h3>
+        <span class="pill">MySQL</span>
+        <span class="pill">phpMyAdmin</span>
+        <span class="pill">SAP S/4HANA (O2C, MM)</span>
+        <span class="pill">Git &amp; GitHub</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>프로젝트</h2>
+
+      <div class="section-box">
+        <h3>NBA 커리어 분석 – LeBron vs Kareem</h3>
+        <p class="subtitle">
+          Python · Tableau · Kaggle NBA 데이터
+        </p>
+        <ul>
+          <li>선수들의 장기적인 득점 추세와 효율 변화를 분석했습니다.</li>
+          <li>Tableau 대시보드를 통해 커리어 궤적을 시각적으로 비교했습니다.</li>
+        </ul>
+        <p><a href="https://github.com/hyuntaepark-gh" target="_blank">GitHub에서 보기</a></p>
+      </div>
+
+      <div class="section-box">
+        <h3>TradingDB – SQL &amp; 데이터베이스 설계</h3>
+        <p class="subtitle">
+          MySQL · ERD · 정규화
+        </p>
+        <ul>
+          <li>고객, 계약, 회사 정보를 포함하는 관계형 스키마를 설계했습니다.</li>
+          <li>리포트 및 집계를 위한 SQL 쿼리와 무결성 체크를 구현했습니다.</li>
+        </ul>
+        <p><a href="https://github.com/hyuntaepark-gh" target="_blank">GitHub에서 보기</a></p>
+      </div>
+
+      <div class="section-box">
+        <h3>SAP S/4HANA Learning Labs</h3>
+        <p class="subtitle">
+          Order-to-Cash · Materials Management
+        </p>
+        <ul>
+          <li>Global Bike 데이터를 활용해 O2C와 MM 프로세스를 end-to-end로 수행했습니다.</li>
+          <li>물류와 회계가 어떻게 연결되는지 문서화하고 정리했습니다.</li>
+        </ul>
+        <p><a href="https://github.com/hyuntaepark-gh" target="_blank">요약 자료 GitHub에서 보기</a></p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>연락처</h2>
+      <div class="section-box">
+        <p>이메일: <a href="mailto:hyuntae.park.9@gmail.com">hyuntae.park.9@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/hyuntaepark-gh" target="_blank">github.com/hyuntaepark-gh</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/hyuntae-park-in" target="_blank">linkedin.com/in/hyuntae-park-in</a></p>
+        <p><a href="../resume.pdf" class="btn" target="_blank">이력서 다운로드 (PDF)</a></p>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> Hyuntae Park. Built with GitHub Pages.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById("themeToggle");
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    let theme = stored || (prefersDark ? "dark" : "dark");
+
+    if (theme === "light") {
+      document.body.classList.add("light");
+      toggle.textContent = "Dark";
+    } else {
+      toggle.textContent = "Light";
+    }
+
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      const isLight = document.body.classList.contains("light");
+      toggle.textContent = isLight ? "Dark" : "Light";
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    });
+  </script>
+</body>
+</html>
