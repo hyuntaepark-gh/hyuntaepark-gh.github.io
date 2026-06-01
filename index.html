@@ -7,87 +7,211 @@
     <title>Hyuntae Park | Data Engineering & AI Analytics</title>
     <meta
       name="description"
-      content="Hyuntae Park — Data Engineering & AI Analytics. End-to-end data platforms, KPI-driven analytics systems, and AI-powered decision tools."
+      content="Hyuntae Park — Data Engineering, Analytics Engineering, and AI Analytics. Building data warehouses, KPI systems, and AI-powered analytics tools."
     />
 
-    <!-- Open Graph / LinkedIn -->
     <meta property="og:title" content="Hyuntae Park | Data Engineering & AI Analytics" />
     <meta
       property="og:description"
-      content="End-to-end data platforms, KPI-driven analytics systems, and AI-powered decision tools."
+      content="Building data warehouses, KPI systems, and AI-powered analytics tools for business decisions."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hyuntaepark-gh.github.io/" />
-    <!-- Optional: add /assets/og.png later -->
-    <!-- <meta property="og:image" content="https://hyuntaepark-gh.github.io/assets/og.png" /> -->
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Simple emoji favicon -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E" />
 
     <style>
-      :root{
+      :root {
         --bg: #ffffff;
-        --fg: #0f172a;       /* slate-900 */
-        --muted: #475569;    /* slate-600 */
-        --subtle: #64748b;   /* slate-500 */
-        --border: #e2e8f0;   /* slate-200 */
+        --fg: #0f172a;
+        --muted: #475569;
+        --subtle: #64748b;
+        --border: #e2e8f0;
         --card: #ffffff;
-        --shadow: 0 10px 30px rgba(2,6,23,0.08);
-        --shadow2: 0 8px 20px rgba(2,6,23,0.06);
-        --accent: #0f172a;
-        --accent2:#111827;
-        --chip:#f1f5f9;
-        --link:#0f172a;
+        --chip: #f1f5f9;
+        --soft: #f8fafc;
+        --accent: #2563eb;
+        --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+        --shadow2: 0 8px 20px rgba(2, 6, 23, 0.06);
       }
 
-      * { box-sizing: border-box; }
-      html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
-      a { color: inherit; text-decoration: none; }
-      a:hover { text-decoration: none; }
+      * {
+        box-sizing: border-box;
+      }
 
-      .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 22px;
+      }
+
       .nav {
-        position: sticky; top: 0; z-index: 50;
-        background: rgba(255,255,255,0.9);
-        backdrop-filter: blur(8px);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--border);
       }
+
       .nav-inner {
         height: 64px;
-        display: flex; align-items: center; justify-content: space-between;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
-      .brand { font-weight: 700; letter-spacing: -0.02em; }
-      .nav-links { display: flex; gap: 18px; font-size: 14px; color: var(--muted); }
-      .nav-links a { padding: 8px 10px; border-radius: 10px; }
-      .nav-links a:hover { background: #f8fafc; color: var(--fg); }
 
-      .hero { padding: 56px 0 30px; }
-      .kicker { font-size: 13px; color: var(--subtle); font-weight: 600; letter-spacing: 0.02em; }
-      h1 { margin: 10px 0 10px; font-size: 44px; line-height: 1.08; letter-spacing: -0.03em; }
-      .subtitle { margin: 0; font-size: 18px; line-height: 1.65; color: var(--muted); max-width: 70ch; }
+      .brand {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
 
-      .cta-row { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px; }
+      .nav-links {
+        display: flex;
+        gap: 16px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .nav-links a {
+        padding: 8px 10px;
+        border-radius: 10px;
+      }
+
+      .nav-links a:hover {
+        background: var(--soft);
+        color: var(--fg);
+      }
+
+      .hero {
+        padding: 68px 0 34px;
+      }
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--accent);
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .kicker::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #22c55e;
+      }
+
+      h1 {
+        margin: 14px 0 12px;
+        max-width: 950px;
+        font-size: 52px;
+        line-height: 1.03;
+        letter-spacing: -0.045em;
+      }
+
+      .subtitle {
+        margin: 0;
+        max-width: 820px;
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .cta-row {
+        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
       .btn {
-        display: inline-flex; align-items: center; gap: 10px;
-        padding: 11px 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 16px;
         border-radius: 14px;
         border: 1px solid var(--border);
-        font-weight: 650;
+        font-weight: 750;
         font-size: 14px;
         background: #fff;
-        box-shadow: none;
       }
+
       .btn-primary {
         background: var(--fg);
         color: #fff;
         border-color: var(--fg);
       }
-      .btn:hover { box-shadow: var(--shadow2); transform: translateY(-1px); transition: 150ms ease; }
-      .btn:active { transform: translateY(0); box-shadow: none; }
-      .btn .dot { width: 8px; height: 8px; border-radius: 99px; background: #22c55e; }
+
+      .btn:hover {
+        box-shadow: var(--shadow2);
+        transform: translateY(-1px);
+        transition: 150ms ease;
+      }
+
+      .tagline {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 22px;
+        padding: 11px 13px;
+        border-radius: 15px;
+        border: 1px dashed var(--border);
+        color: var(--muted);
+        background: #fbfdff;
+        font-size: 13.5px;
+      }
+
+      .tagline code {
+        background: var(--chip);
+        padding: 3px 8px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 12px;
+        color: var(--fg);
+      }
+
+      .section {
+        padding: 30px 0;
+      }
+
+      .section h2 {
+        margin: 0 0 12px;
+        font-size: 24px;
+        letter-spacing: -0.03em;
+      }
+
+      .lead {
+        margin: 0 0 20px;
+        max-width: 820px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
 
       .grid {
         display: grid;
@@ -95,77 +219,199 @@
         gap: 18px;
       }
 
+      .col-12 {
+        grid-column: span 12;
+      }
+
+      .col-6 {
+        grid-column: span 6;
+      }
+
+      .col-4 {
+        grid-column: span 4;
+      }
+
+      .col-3 {
+        grid-column: span 3;
+      }
+
       .card {
         background: var(--card);
         border: 1px solid var(--border);
-        border-radius: 18px;
-        padding: 18px;
+        border-radius: 20px;
+        padding: 20px;
         box-shadow: none;
       }
-      .card:hover { box-shadow: var(--shadow2); transform: translateY(-1px); transition: 160ms ease; }
-      .card h3 { margin: 0; font-size: 16px; letter-spacing: -0.01em; }
-      .card p { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
-      .meta { margin-top: 10px; color: var(--subtle); font-size: 12.5px; font-weight: 600; }
-      .pill-row { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
-      .pill { font-size: 12px; font-weight: 650; color: #0f172a; background: var(--chip); border: 1px solid #e2e8f0; padding: 6px 10px; border-radius: 999px; }
 
-      .section { padding: 26px 0; }
-      .section h2 { margin: 0 0 12px; font-size: 20px; letter-spacing: -0.02em; }
-      .section .lead { margin: 0 0 18px; color: var(--muted); line-height: 1.6; max-width: 75ch; }
+      .card:hover {
+        box-shadow: var(--shadow2);
+        transform: translateY(-2px);
+        transition: 160ms ease;
+      }
 
-      .col-6 { grid-column: span 6; }
-      .col-4 { grid-column: span 4; }
-      .col-12 { grid-column: span 12; }
+      .card h3 {
+        margin: 0;
+        font-size: 17px;
+        letter-spacing: -0.015em;
+      }
 
-      .two-col { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 18px; }
-      .mini { color: var(--muted); font-size: 14px; line-height: 1.7; }
+      .card p {
+        margin: 9px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.58;
+      }
 
-      .list { margin: 0; padding-left: 18px; color: var(--muted); }
-      .list li { margin: 6px 0; }
+      .snapshot-card {
+        background: linear-gradient(180deg, #ffffff, #f8fafc);
+      }
+
+      .snapshot-card strong {
+        display: block;
+        font-size: 30px;
+        letter-spacing: -0.04em;
+        line-height: 1;
+      }
+
+      .snapshot-card span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13.5px;
+        line-height: 1.45;
+      }
+
+      .project-card {
+        min-height: 255px;
+      }
+
+      .impact {
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 14px;
+        background: var(--soft);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 13.5px;
+        line-height: 1.55;
+      }
+
+      .impact b {
+        color: var(--fg);
+      }
+
+      .pill-row {
+        margin-top: 13px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pill {
+        font-size: 12px;
+        font-weight: 750;
+        color: var(--fg);
+        background: var(--chip);
+        border: 1px solid var(--border);
+        padding: 6px 10px;
+        border-radius: 999px;
+      }
+
+      .meta {
+        margin-top: 12px;
+        color: var(--subtle);
+        font-size: 12.5px;
+        font-weight: 700;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 18px;
+      }
+
+      .list {
+        margin: 12px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .list li {
+        margin: 6px 0;
+      }
+
+      .list b {
+        color: var(--fg);
+      }
 
       .footer {
         border-top: 1px solid var(--border);
-        padding: 22px 0 40px;
+        padding: 22px 0 42px;
         color: var(--subtle);
         font-size: 13px;
       }
 
-      .tagline {
-        display: inline-flex; align-items: center; gap: 10px;
-        margin-top: 18px;
-        padding: 10px 12px;
-        border-radius: 14px;
-        border: 1px dashed var(--border);
-        color: var(--muted);
-        background: #fbfdff;
-        font-size: 13.5px;
-      }
-      .tagline code {
-        background: #f1f5f9;
-        padding: 2px 8px;
-        border-radius: 999px;
-        border: 1px solid #e2e8f0;
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono";
-        font-size: 12px;
-        color: #0f172a;
+      @media (max-width: 900px) {
+        h1 {
+          font-size: 40px;
+        }
+
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+
+        .col-6,
+        .col-4,
+        .col-3 {
+          grid-column: span 12;
+        }
       }
 
-      @media (max-width: 880px) {
-        h1 { font-size: 36px; }
-        .two-col { grid-template-columns: 1fr; }
-        .col-6 { grid-column: span 12; }
-        .col-4 { grid-column: span 12; }
-      }
+      @media (max-width: 560px) {
+        .container {
+          padding: 0 16px;
+        }
 
-      @media (max-width: 520px) {
-        h1 { font-size: 32px; }
-        .nav-links { gap: 8px; }
+        h1 {
+          font-size: 34px;
+        }
+
+        .subtitle {
+          font-size: 16px;
+        }
+
+        .nav-inner {
+          height: auto;
+          padding: 14px 0;
+          align-items: flex-start;
+          gap: 10px;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          width: 100%;
+          justify-content: space-between;
+          gap: 6px;
+          font-size: 13px;
+        }
+
+        .nav-links a {
+          padding: 6px 4px;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .tagline {
+          width: 100%;
+        }
       }
     </style>
   </head>
 
   <body>
-    <!-- NAV -->
     <div class="nav">
       <div class="container nav-inner">
         <a class="brand" href="#top">Hyuntae Park</a>
@@ -179,33 +425,24 @@
     </div>
 
     <main id="top" class="container">
-      <!-- HERO -->
       <section class="hero">
-        <div class="kicker">Data Engineering & AI Analytics</div>
-        <h1>Building end-to-end data platforms and decision-ready KPI systems.</h1>
+        <div class="kicker">Data Engineering · Analytics Engineering · AI Analytics</div>
+
+        <h1>Turning raw data into executive-ready business decisions.</h1>
+
         <p class="subtitle">
-          I design reliable data models, metric layers, and analytics pipelines—then ship dashboards and AI-enabled tools
-          that help teams explain <b>what changed</b>, <b>why it changed</b>, and <b>what to do next</b>.
+          I build end-to-end data warehouses, KPI systems, and AI-powered analytics products that help organizations understand
+          <b>what changed</b>, <b>why it changed</b>, and <b>what to do next</b>.
         </p>
 
         <div class="cta-row">
-          <a class="btn btn-primary" href="#projects">
-            <span class="dot" aria-hidden="true"></span>
-            View Featured Projects
-          </a>
-          <a class="btn" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">
-            GitHub ↗
-          </a>
-          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-            LinkedIn ↗
-          </a>
-          <!-- Optional: add resume.pdf to repo root and update link -->
-          <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">
-            Resume (PDF)
-          </a>
+          <a class="btn btn-primary" href="#projects">View Featured Projects</a>
+          <a class="btn" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">Resume PDF ↗</a>
         </div>
 
-        <div class="tagline" aria-label="stack">
+        <div class="tagline">
           <span>Core stack:</span>
           <code>PostgreSQL</code>
           <code>Python</code>
@@ -216,93 +453,161 @@
         </div>
       </section>
 
-      <!-- PROJECTS -->
+      <section class="section" aria-label="Career Snapshot">
+        <div class="grid">
+          <div class="card snapshot-card col-3">
+            <strong>4+</strong>
+            <span>End-to-end analytics projects</span>
+          </div>
+
+          <div class="card snapshot-card col-3">
+            <strong>20+</strong>
+            <span>Advanced SQL analyses</span>
+          </div>
+
+          <div class="card snapshot-card col-3">
+            <strong>3</strong>
+            <span>Data platform builds</span>
+          </div>
+
+          <div class="card snapshot-card col-3">
+            <strong>100%</strong>
+            <span>Documented GitHub repositories</span>
+          </div>
+        </div>
+      </section>
+
       <section id="projects" class="section">
         <h2>Featured Projects</h2>
         <p class="lead">
-          A curated set of projects that demonstrate data modeling, analytics engineering, KPI design, and production-minded delivery.
-          Each card links to a full GitHub repo with documentation and code.
+          A curated set of projects focused on data modeling, analytics engineering, KPI design, and production-minded delivery.
         </p>
 
         <div class="grid">
-          <!-- Project 1 -->
-          <a class="card col-6" href="https://github.com/hyuntaepark-gh/End-To-End-Retail-Data-Warehouse" target="_blank" rel="noreferrer">
-            <h3>End-to-End Retail Data Warehouse</h3>
+          <a class="card project-card col-6" href="https://github.com/hyuntaepark-gh/End-To-End-Retail-Data-Warehouse" target="_blank" rel="noreferrer">
+            <h3>Enterprise Retail Data Warehouse</h3>
             <p>
-              Star schema DW with staging → warehouse → marts, metric-ready tables, and executive KPI dashboards.
-              Focus on reproducible transformations and decision-aligned metrics.
+              Built a star-schema warehouse architecture with staging, warehouse, and mart layers designed for executive KPI reporting and scalable analytics.
             </p>
+
+            <div class="impact">
+              <b>Business Impact:</b> Converts raw retail data into trusted KPI marts for dashboards, performance tracking, and executive decision-making.
+            </div>
+
             <div class="pill-row">
               <span class="pill">Star Schema</span>
-              <span class="pill">Marts / Metric Layer</span>
-              <span class="pill">SQL + Python ETL</span>
+              <span class="pill">Metric Layer</span>
+              <span class="pill">ETL Pipeline</span>
             </div>
-            <div class="meta">PostgreSQL · Python · Tableau</div>
+
+            <div class="meta">PostgreSQL · Python · Tableau · Data Warehousing</div>
           </a>
 
-          <!-- Project 2 -->
-          <a class="card col-6" href="https://github.com/hyuntaepark-gh/olist-sql-analytics" target="_blank" rel="noreferrer">
-            <h3>Olist SQL Analytics</h3>
+          <a class="card project-card col-6" href="https://github.com/hyuntaepark-gh/olist-sql-analytics" target="_blank" rel="noreferrer">
+            <h3>Business KPI Analytics Platform</h3>
             <p>
-              Business KPI analytics with cohorts, funnel analysis, and revenue driver decomposition.
-              Designed to answer “what changed” and “what caused it” with clear SQL artifacts.
+              Advanced SQL analytics including cohort analysis, funnel optimization, customer segmentation, and revenue driver decomposition.
             </p>
+
+            <div class="impact">
+              <b>Business Impact:</b> Explains revenue movement, customer behavior, delivery issues, and funnel drop-offs using decision-ready SQL analysis.
+            </div>
+
             <div class="pill-row">
-              <span class="pill">Cohort</span>
-              <span class="pill">Funnel</span>
+              <span class="pill">Advanced SQL</span>
+              <span class="pill">Cohort Analysis</span>
               <span class="pill">Driver Decomposition</span>
             </div>
-            <div class="meta">PostgreSQL · Advanced SQL</div>
+
+            <div class="meta">PostgreSQL · SQL Storytelling · KPI Analytics</div>
           </a>
 
-          <!-- Project 3 -->
-          <a class="card col-6" href="https://github.com/hyuntaepark-gh/AI-Executive-KPI-Intelligence-Micro-SaaS" target="_blank" rel="noreferrer">
-            <h3>AI Executive KPI Intelligence (Micro-SaaS)</h3>
+          <a class="card project-card col-6" href="https://github.com/hyuntaepark-gh/AI-Executive-KPI-Intelligence-Micro-SaaS" target="_blank" rel="noreferrer">
+            <h3>AI Executive KPI Intelligence</h3>
             <p>
-              LLM-powered KPI insights grounded in a metrics layer.
-              Emphasis on production structure: consistent schemas, reproducible results, and clean API-style outputs.
+              LLM-powered analytics platform that automatically explains KPI changes, identifies root causes, and generates executive summaries.
             </p>
-            <div class="pill-row">
-              <span class="pill">LLM + Metrics</span>
-              <span class="pill">API-first</span>
-              <span class="pill">CI-ready</span>
+
+            <div class="impact">
+              <b>Business Impact:</b> Reduces manual reporting effort by turning metric changes into clear business explanations and next-step recommendations.
             </div>
-            <div class="meta">Python · LLM · Analytics Engineering</div>
+
+            <div class="pill-row">
+              <span class="pill">LLM Analytics</span>
+              <span class="pill">KPI Explanation</span>
+              <span class="pill">API-Ready</span>
+            </div>
+
+            <div class="meta">Python · LLM · Analytics Engineering · Micro-SaaS</div>
           </a>
 
-          <!-- Project 4 -->
-          <a class="card col-6" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">
+          <a class="card project-card col-6" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">
             <h3>Baseball Analytics Platform</h3>
             <p>
-              Data pipelines + interactive dashboards for lineups/prospects and decision-style insights.
-              A vertical analytics product direction that showcases applied DE + analytics.
+              Real-time analytics platform combining data pipelines, advanced metrics, dashboards, and decision-support insights.
             </p>
+
+            <div class="impact">
+              <b>Business Impact:</b> Demonstrates vertical analytics product thinking through live data, player metrics, and decision-oriented dashboards.
+            </div>
+
             <div class="pill-row">
-              <span class="pill">Pipelines</span>
-              <span class="pill">Streamlit Dashboard</span>
+              <span class="pill">Live Data</span>
+              <span class="pill">Dashboards</span>
               <span class="pill">Decision Analytics</span>
             </div>
-            <div class="meta">Python · Streamlit · PostgreSQL</div>
+
+            <div class="meta">Python · Streamlit · PostgreSQL · Product Analytics</div>
           </a>
         </div>
       </section>
 
-      <!-- SKILLS -->
+      <section class="section">
+        <h2>Why Hire Me</h2>
+        <p class="lead">
+          I combine business analytics, data engineering, and AI analytics to build systems that are not only technically sound, but useful for decision-makers.
+        </p>
+
+        <div class="grid">
+          <div class="card col-4">
+            <h3>Data Warehousing</h3>
+            <p>
+              Designing scalable warehouse architectures using star schemas, marts, reliable transformations, and KPI-ready data models.
+            </p>
+          </div>
+
+          <div class="card col-4">
+            <h3>Business Analytics</h3>
+            <p>
+              Translating raw operational data into executive-level insights, KPI frameworks, funnel analysis, and revenue explanations.
+            </p>
+          </div>
+
+          <div class="card col-4">
+            <h3>AI Analytics Delivery</h3>
+            <p>
+              Building AI-powered analytics applications that automate reporting, explain KPI movement, and support business decisions.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="skills" class="section">
         <h2>Skills</h2>
         <p class="lead">
-          I focus on building analytics systems that are trustworthy, measurable, and easy for stakeholders to consume.
+          I focus on building analytics systems that are trustworthy, measurable, reproducible, and easy for stakeholders to consume.
         </p>
 
         <div class="grid">
           <div class="card col-4">
             <h3>Data Engineering</h3>
             <p>
-              Data modeling (star schema), ETL/ELT patterns, data quality checks, and “dashboard-ready” marts.
+              Data modeling, ETL/ELT patterns, warehouse layers, data quality checks, and dashboard-ready marts.
             </p>
+
             <div class="pill-row">
               <span class="pill">PostgreSQL</span>
-              <span class="pill">Modeling</span>
+              <span class="pill">Python</span>
               <span class="pill">ETL</span>
               <span class="pill">Data Quality</span>
             </div>
@@ -311,87 +616,107 @@
           <div class="card col-4">
             <h3>Analytics Engineering</h3>
             <p>
-              KPI definition, metric consistency, cohort/funnel analysis, and driver decomposition for executive reporting.
+              KPI definition, metric consistency, cohort/funnel analysis, customer segmentation, and driver decomposition.
             </p>
+
             <div class="pill-row">
               <span class="pill">KPI Design</span>
               <span class="pill">Cohort</span>
               <span class="pill">Funnel</span>
-              <span class="pill">Driver Analysis</span>
+              <span class="pill">SQL</span>
             </div>
           </div>
 
           <div class="card col-4">
-            <h3>AI & Delivery</h3>
+            <h3>AI & Product Delivery</h3>
             <p>
-              LLM-enabled analytics tooling grounded in schemas/metrics, plus reproducible repos with clean documentation.
+              LLM-enabled analytics tools grounded in schemas, metric layers, structured outputs, and clean documentation.
             </p>
+
             <div class="pill-row">
               <span class="pill">LLM Integration</span>
               <span class="pill">Streamlit</span>
               <span class="pill">Tableau</span>
-              <span class="pill">GitHub Actions</span>
+              <span class="pill">GitHub</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ABOUT -->
       <section id="about" class="section">
         <h2>About</h2>
 
         <div class="two-col">
           <div class="card">
-            <h3>How I work</h3>
-            <p class="mini">
-              I approach analytics like a product: define reliable metrics, build reproducible pipelines, and ship outputs that help
-              stakeholders make decisions. I care about clarity (docs/README), correctness (validation checks), and usability (dashboards).
+            <h3>What I Bring</h3>
+            <p>
+              I approach analytics like a product: define reliable metrics, build reproducible pipelines, and ship outputs that help stakeholders make decisions.
             </p>
 
             <ul class="list">
-              <li><b>Metric-first</b>: KPI definitions and consistent calculations</li>
-              <li><b>Modeling</b>: star schema + marts aligned to reporting needs</li>
-              <li><b>Decision focus</b>: drivers, cohorts, funnels, and operational impact</li>
+              <li><b>Data Warehousing:</b> star schema, marts, KPI-ready data models</li>
+              <li><b>Advanced SQL Analytics:</b> cohorts, funnels, segmentation, revenue drivers</li>
+              <li><b>Executive Reporting:</b> dashboards, business explanations, decision support</li>
+              <li><b>AI Analytics:</b> LLM-powered KPI summaries and root-cause narratives</li>
+              <li><b>Business Context:</b> marketing analytics, operations, and process improvement</li>
             </ul>
           </div>
 
           <div class="card">
             <h3>Quick Facts</h3>
-            <p class="mini">
-              • Rutgers MITA (focus: DE + AI Analytics)<br />
-              • Marketing Analytics background<br />
-              • Strong in SQL storytelling + system design
+            <p>
+              Rutgers MITA candidate with a focus on Data Engineering, Analytics Engineering, and AI Analytics.
             </p>
 
-            <div class="pill-row" style="margin-top:14px;">
+            <div class="pill-row">
               <span class="pill">NY / Remote</span>
-              <span class="pill">Open to DE/AE roles</span>
+              <span class="pill">Open to DE / AE roles</span>
+              <span class="pill">Business Analytics</span>
             </div>
 
-            <p class="mini" style="margin-top:14px;">
-              Want a fast overview? Start with the 4 featured projects above.
+            <p>
+              Strong fit for roles involving SQL analytics, data platforms, KPI reporting, BI dashboards, and AI-enabled analytics products.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- CONTACT -->
+      <section class="section">
+        <h2>Education</h2>
+
+        <div class="card col-12">
+          <h3>Rutgers University</h3>
+          <p>
+            Master of Information Technology and Analytics, focus areas in Data Engineering, Analytics Engineering, and AI Analytics.
+          </p>
+
+          <div class="pill-row">
+            <span class="pill">Data Engineering</span>
+            <span class="pill">Analytics Engineering</span>
+            <span class="pill">AI Analytics</span>
+            <span class="pill">Business Analytics</span>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="section">
         <h2>Contact</h2>
         <p class="lead">
-          Best way to reach me is via LinkedIn or GitHub. (You can also add an email link below.)
+          Currently seeking opportunities in Data Engineering, Analytics Engineering, Business Intelligence, and AI Analytics.
+          Open to remote, hybrid, and on-site roles.
         </p>
 
         <div class="cta-row">
           <a class="btn btn-primary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
           <a class="btn" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">GitHub ↗</a>
-          <!-- Optional: put your email -->
-          <!-- <a class="btn" href="mailto:youremail@example.com">Email</a> -->
+          <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">Resume PDF ↗</a>
+          <!-- Replace with your email when ready -->
+          <!-- <a class="btn" href="mailto:your.email@example.com">Email</a> -->
         </div>
       </section>
 
       <div class="footer">
-        © <span id="y"></span> Hyuntae Park · Built as a lightweight GitHub Pages site
+        © <span id="y"></span> Hyuntae Park · Data Engineering & AI Analytics Portfolio
       </div>
     </main>
 
