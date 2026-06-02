@@ -36,13 +36,9 @@
       --radius: 28px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -99,6 +95,7 @@
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 8px;
       font-size: 14px;
       color: var(--muted);
@@ -113,6 +110,19 @@
     .nav-links a:hover {
       background: var(--soft);
       color: var(--accent);
+    }
+
+    .language-select {
+      margin-left: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--fg);
+      font-size: 13px;
+      font-weight: 850;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
     }
 
     .hero {
@@ -721,12 +731,18 @@
       .nav-links {
         width: 100%;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: 4px;
         font-size: 12px;
       }
 
       .nav-links a {
         padding: 7px 6px;
+      }
+
+      .language-select {
+        width: 100%;
+        margin-left: 0;
       }
 
       .hero {
@@ -778,6 +794,11 @@
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
+
+        <select class="language-select" onchange="location.href=this.value" aria-label="Language selector">
+          <option value="/" selected>English</option>
+          <option value="/kr/">한국어</option>
+        </select>
       </nav>
     </div>
   </header>
