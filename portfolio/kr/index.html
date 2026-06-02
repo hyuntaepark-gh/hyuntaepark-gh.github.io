@@ -1,390 +1,1141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>현태 박 | 애널리틱스 포트폴리오</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Hyuntae Park | 데이터 엔지니어링 & AI 애널리틱스</title>
+  <meta name="description" content="Hyuntae Park — 데이터 웨어하우스, KPI 시스템, AI 애널리틱스 제품을 만드는 데이터 엔지니어 / 애널리틱스 엔지니어 포트폴리오." />
+
+  <meta property="og:title" content="Hyuntae Park | 데이터 엔지니어링 & AI 애널리틱스" />
+  <meta property="og:description" content="데이터 웨어하우스, KPI 시스템, AI 애널리틱스 제품을 만드는 포트폴리오." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hyuntaepark-gh.github.io/kr/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E" />
+
   <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      background: #0f172a;
-      color: #e5e7eb;
+    :root {
+      --bg: #ffffff;
+      --fg: #0f172a;
+      --muted: #475569;
+      --subtle: #64748b;
+      --border: #e2e8f0;
+      --soft: #f8fafc;
+      --chip: #eef2f7;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --linkedin: #0a66c2;
+      --github: #111827;
+      --email: #ea4335;
+      --dark: #020617;
+      --green: #22c55e;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.10);
+      --shadow-soft: 0 14px 35px rgba(15, 23, 42, 0.07);
+      --radius: 28px;
     }
-    .wrapper {
-      max-width: 960px;
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 32rem),
+        radial-gradient(circle at top right, rgba(14, 165, 233, 0.10), transparent 34rem),
+        #ffffff;
+      color: var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Helvetica, Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1160px;
       margin: 0 auto;
-      padding: 2rem 1.5rem 3rem;
+      padding: 0 24px;
     }
 
     .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(2, 6, 23, 0.95);
-      border-radius: 999px;
-      border: 1px solid #1f2937;
-      padding: 0.5rem 1.2rem;
-      margin-bottom: 1.8rem;
       position: sticky;
-      top: 1rem;
-      z-index: 20;
-      backdrop-filter: blur(6px);
-    }
-    .nav-logo {
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      color: #facc15;
-      font-size: 0.95rem;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .nav-links a {
-      margin-left: 0.8rem;
-      font-size: 0.9rem;
-      color: #9ca3af;
-      text-decoration: none;
-    }
-    .nav-links a:hover {
-      color: #facc15;
-    }
-    .theme-toggle {
-      margin-left: 0.8rem;
-      padding: 0.25rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid #4b5563;
-      background: #020617;
-      color: #e5e7eb;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-    .theme-toggle:hover {
-      background: #111827;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     }
 
-    header {
-      margin-bottom: 1.5rem;
-    }
-    .profile-wrapper {
+    .nav-inner {
+      height: 72px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.14);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      padding: 9px 12px;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      background: var(--soft);
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 86px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+      gap: 48px;
       align-items: center;
     }
-    .profile-photo {
-      width: 120px;
-      height: 120px;
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--accent);
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.16);
+      padding: 8px 12px;
       border-radius: 999px;
-      overflow: hidden;
-      border: 2px solid #1f2937;
-      flex: 0 0 auto;
-      background: #020617;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
-    .profile-photo img {
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--green);
+    }
+
+    h1 {
+      margin: 22px 0 18px;
+      max-width: 790px;
+      font-size: clamp(40px, 5.8vw, 68px);
+      line-height: 1.04;
+      letter-spacing: -0.06em;
+      word-break: keep-all;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #0f172a, #1d4ed8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      margin: 0;
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+      word-break: keep-all;
+    }
+
+    .hero-subtitle b {
+      color: var(--fg);
+    }
+
+    .role-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .role-pill {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .cta-break {
+      flex-basis: 100%;
+      height: 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 18px;
+      border-radius: 15px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--fg);
+      font-size: 14px;
+      font-weight: 900;
+      transition: 180ms ease;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      border-color: var(--dark);
+      color: #fff;
+    }
+
+    .btn-resume {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .btn-resume:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+
+    .btn-github {
+      background: var(--github);
+      border-color: var(--github);
+      color: #fff;
+    }
+
+    .btn-linkedin {
+      background: var(--linkedin);
+      border-color: var(--linkedin);
+      color: #fff;
+    }
+
+    .btn-email {
+      background: var(--email);
+      border-color: var(--email);
+      color: #fff;
+    }
+
+    .btn-symbol {
+      font-weight: 950;
+      opacity: 0.95;
+    }
+
+    .profile-shell {
+      position: relative;
+    }
+
+    .profile-shell::before {
+      content: "";
+      position: absolute;
+      inset: -14px;
+      border-radius: 36px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.18), rgba(14, 165, 233, 0.08), rgba(15, 23, 42, 0.05));
+      z-index: -1;
+      filter: blur(2px);
+    }
+
+    .profile-card {
+      border-radius: 32px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(18px);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .availability span {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--green);
+    }
+
+    .profile-image-wrap {
+      width: 222px;
+      height: 222px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      padding: 7px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
+    }
+
+    .profile-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
       display: block;
     }
-    .profile-text {
-      flex: 1 1 260px;
+
+    .profile-name {
+      font-size: 30px;
+      font-weight: 950;
+      letter-spacing: -0.055em;
     }
 
-    h1, h2, h3 {
-      color: #facc15;
-      margin-bottom: 0.5rem;
-    }
-    h1 {
-      font-size: 2.4rem;
-    }
-    h2 {
-      margin-top: 2rem;
-      border-bottom: 1px solid #1f2937;
-      padding-bottom: 0.25rem;
-    }
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .tagline {
-      font-size: 1.05rem;
-      margin-bottom: 1rem;
-    }
-    .pill {
-      display: inline-block;
-      padding: 0.25rem 0.6rem;
-      margin: 0.15rem;
-      border-radius: 999px;
-      background: #111827;
-      border: 1px solid #1f2937;
-      font-size: 0.8rem;
-    }
-    .section-box {
-      background: #020617;
-      border-radius: 0.75rem;
-      padding: 1rem 1.2rem;
-      border: 1px solid #1f2937;
-      margin-top: 0.75rem;
-    }
-    ul {
-      margin-top: 0.4rem;
-    }
-    li {
-      margin-bottom: 0.35rem;
-    }
-    .subtitle {
-      color: #9ca3af;
-      font-size: 0.95rem;
-    }
-    .footer {
-      margin-top: 3rem;
-      font-size: 0.85rem;
-      color: #6b7280;
-      text-align: center;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid #4b5563;
-      background: #111827;
-      color: #e5e7eb;
-      font-size: 0.9rem;
-      text-decoration: none;
-    }
-    .btn:hover {
-      background: #1f2937;
-      text-decoration: none;
+    .profile-title {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      font-weight: 700;
     }
 
-    /* LIGHT MODE */
-    body.light {
-      background: #f9fafb;
-      color: #111827;
-    }
-    body.light .nav {
-      background: rgba(249, 250, 251, 0.9);
-      border-color: #e5e7eb;
-    }
-    body.light .nav-logo {
-      color: #d97706;
-    }
-    body.light .nav-links a {
-      color: #4b5563;
-    }
-    body.light .nav-links a:hover {
-      color: #b45309;
-    }
-    body.light h1,
-    body.light h2,
-    body.light h3 {
-      color: #b45309;
-    }
-    body.light .section-box {
+    .profile-highlight {
+      margin: 22px 0 0;
+      padding: 16px;
+      border-radius: 20px;
       background: #ffffff;
-      border-color: #e5e7eb;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+      text-align: left;
+      word-break: keep-all;
     }
-    body.light .pill {
-      background: #f3f4f6;
-      border-color: #e5e7eb;
-      color: #111827;
+
+    .profile-highlight b {
+      color: var(--fg);
     }
-    body.light .footer {
-      color: #6b7280;
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 18px;
     }
-    body.light .theme-toggle {
-      background: #f9fafb;
-      color: #111827;
-      border-color: #d1d5db;
+
+    .mini-stat {
+      padding: 12px 10px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--border);
     }
-    body.light .btn {
-      background: #111827;
-      color: #f9fafb;
-      border-color: #111827;
+
+    .mini-stat b {
+      display: block;
+      font-size: 20px;
+      letter-spacing: -0.04em;
+    }
+
+    .mini-stat span {
+      display: block;
+      margin-top: 3px;
+      color: var(--subtle);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .section {
+      padding: 48px 0;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+      word-break: keep-all;
+    }
+
+    .lead {
+      margin: 12px 0 0;
+      max-width: 770px;
+      color: var(--muted);
+      line-height: 1.75;
+      word-break: keep-all;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .col-4 {
+      grid-column: span 4;
+    }
+
+    .col-12 {
+      grid-column: span 12;
+    }
+
+    .card {
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(12px);
+      padding: 24px;
+      transition: 180ms ease;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.035);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(37, 99, 235, 0.22);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 19px;
+      letter-spacing: -0.03em;
+      word-break: keep-all;
+    }
+
+    .card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14.5px;
+      word-break: keep-all;
+    }
+
+    .what-card {
+      min-height: 210px;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+      font-size: 22px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    }
+
+    .project-card {
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 545px;
+    }
+
+    .project-visual {
+      height: 205px;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 45%),
+        linear-gradient(135deg, #f8fafc, #eef2ff);
+      border-bottom: 1px solid var(--border);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .visual-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--subtle);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .visual-window {
+      margin-top: 16px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+    }
+
+    .visual-line {
+      height: 9px;
+      border-radius: 999px;
+      background: #dbeafe;
+      margin-bottom: 9px;
+    }
+
+    .visual-line.short {
+      width: 58%;
+    }
+
+    .visual-line.medium {
+      width: 78%;
+    }
+
+    .visual-bars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      align-items: end;
+      height: 58px;
+      margin-top: 12px;
+    }
+
+    .visual-bars span {
+      display: block;
+      border-radius: 10px 10px 4px 4px;
+      background: linear-gradient(180deg, #60a5fa, #2563eb);
+    }
+
+    .visual-bars span:nth-child(1) { height: 34px; }
+    .visual-bars span:nth-child(2) { height: 48px; }
+    .visual-bars span:nth-child(3) { height: 40px; }
+    .visual-bars span:nth-child(4) { height: 56px; }
+
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-label {
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .impact {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 18px;
+      background: var(--soft);
+      border: 1px solid var(--border);
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+
+    .impact b {
+      color: var(--fg);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .pill-row.center {
+      justify-content: center;
+    }
+
+    .pill {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .project-link {
+      margin-top: auto;
+      padding-top: 18px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .skills-card {
+      padding: 28px;
+    }
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+    }
+
+    .skill {
+      padding: 11px 13px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--fg);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.035);
+    }
+
+    .cta-banner {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.34), transparent 36%),
+        linear-gradient(135deg, #020617, #0f172a);
+      color: #fff;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-banner h2 {
+      color: #fff;
+      margin: 0;
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.16;
+      letter-spacing: -0.05em;
+      word-break: keep-all;
+    }
+
+    .cta-banner p {
+      color: #cbd5e1;
+      margin: 12px 0 0;
+      line-height: 1.7;
+      max-width: 690px;
+      word-break: keep-all;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 48px;
+      color: var(--subtle);
+      font-size: 13px;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        max-width: 560px;
+      }
+
+      .col-4 {
+        grid-column: span 12;
+      }
+
+      .project-card {
+        min-height: auto;
+      }
+
+      .cta-banner,
+      .contact-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .nav-inner {
+        height: auto;
+        padding: 14px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 4px;
+        font-size: 12px;
+      }
+
+      .nav-links a {
+        padding: 7px 6px;
+      }
+
+      .hero {
+        padding: 54px 0 34px;
+      }
+
+      h1 {
+        font-size: clamp(36px, 12vw, 48px);
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .cta-break {
+        display: none;
+      }
+
+      .profile-card {
+        padding: 24px;
+      }
+
+      .profile-image-wrap {
+        width: 180px;
+        height: 180px;
+      }
+
+      .mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-banner {
+        padding: 28px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="wrapper" id="top">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-dot"></span>
+        Hyuntae Park
+      </a>
 
-    <nav class="nav">
-      <div class="nav-logo">Hyuntae Park · Analytics</div>
-      <div class="nav-links">
-        <a href="/kr/#top">홈</a>
-        <a href="/kr/#about">소개</a>
-        <a href="/kr/#experience">경력</a>
-        <a href="/kr/#skills">역량</a>
-        <a href="/kr/#projects">프로젝트</a>
-        <a href="/kr/#contact">연락처</a>
+      <nav class="nav-links">
         <a href="/">EN</a>
-        <button id="themeToggle" class="theme-toggle">Light</button>
-      </div>
-    </nav>
-
-    <header>
-      <div class="profile-wrapper">
-        <div class="profile-photo">
-          <img src="../img/profile.jpg" alt="Hyuntae Park profile photo" />
-        </div>
-        <div class="profile-text">
-          <h1>👋 안녕하세요, 박현태 입니다</h1>
-          <p class="tagline">
-            마케팅 애널리틱스 · 비즈니스 애널리틱스 · 데이터 분석
-          </p>
-          <p class="subtitle">
-            SQL, Python, Tableau, SAP S/4HANA 경험을 바탕으로 데이터로 비즈니스 의사결정을
-            지원하는 애널리스트를 목표로 하고 있습니다.
-          </p>
-        </div>
-      </div>
-    </header>
-
-    <section id="about">
-      <h2>소개</h2>
-      <div class="section-box">
-        <p>
-          저는 마케팅 애널리틱스와 비즈니스 애널리틱스를 전공하면서, 고객 행동을 데이터로
-          설명하고 의사결정에 도움이 되는 인사이트를 찾는 것에 관심이 많습니다. SQL, Python,
-          시각화 도구를 활용해서 복잡한 데이터를 이해하기 쉬운 스토리로 정리하는 일을 좋아합니다.
-        </p>
-        <p>
-          이전에는 미국 뉴저지의 Grand SK Corp에서 시설 관리 및 인사(HR) 업무를 담당했습니다.
-          회사 사무실과 창고 관리, 차량·보안·허가 관련 업무부터 직원 데이터 관리, 평가 자료 정리
-          등 실제 비즈니스 운영과 사람, 데이터를 모두 다뤄본 경험이 있습니다. 이 경험 덕분에
-          지금은 데이터를 볼 때 항상 실제 업무와 사람을 함께 떠올리며 분석하려고 합니다.
-        </p>
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>경력</h2>
-      <div class="section-box">
-
-        <h3>Grand SK CORP · East Rutherford, NJ</h3>
-
-        <p class="subtitle">Property Management Assistant · 2021년 12월 – 2022년 10월</p>
-        <ul>
-          <li>회사 사무실, 창고, 보관 시설 등 전반적인 시설 운영과 유지 보수를 관리했습니다.</li>
-          <li>시청 및 관련 기관과 협의하여 각종 허가, 검사 대응 및 안전 관련 요구사항을 처리했습니다.</li>
-          <li>회사 차량, 톨 관리, 점검 일정, 경미한 IT 문제 처리 등 일상 운영에 필요한 요소들을 관리했습니다.</li>
-          <li>오피스 리모델링과 비품 구매를 주도하며 효율적인 근무 환경 조성에 기여했습니다.</li>
-        </ul>
-
-        <p class="subtitle">Assistant Manager, Human Resources · 2021년 10월 – 2022년 10월</p>
-        <ul>
-          <li>직원 인사 데이터, 근태 기록, 평가 자료 등 HR 관련 데이터를 정리·관리했습니다.</li>
-          <li>인턴 및 정규직 채용, 온보딩, 오리엔테이션과 교육 프로그램을 지원했습니다.</li>
-          <li>연간 평가 결과를 정리하여 경영진 보고 자료에 활용했습니다.</li>
-          <li>사내 행사 및 복리후생 관련 업무를 조율하며 조직 내 커뮤니케이션을 지원했습니다.</li>
-        </ul>
-
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2>역량</h2>
-      <div class="section-box">
-        <h3>언어</h3>
-        <span class="pill">Python</span>
-        <span class="pill">R</span>
-        <span class="pill">SQL</span>
-
-        <h3>분석 &amp; 시각화</h3>
-        <span class="pill">Tableau</span>
-        <span class="pill">Excel</span>
-        <span class="pill">Power BI</span>
-
-        <h3>데이터 &amp; 시스템</h3>
-        <span class="pill">MySQL</span>
-        <span class="pill">phpMyAdmin</span>
-        <span class="pill">SAP S/4HANA (O2C, MM)</span>
-        <span class="pill">Git &amp; GitHub</span>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>프로젝트</h2>
-
-      <div class="section-box">
-        <h3>NBA 커리어 분석 – LeBron vs Kareem</h3>
-        <p class="subtitle">
-          Python · Tableau · Kaggle NBA 데이터
-        </p>
-        <ul>
-          <li>선수들의 장기적인 득점 추세와 효율 변화를 분석했습니다.</li>
-          <li>Tableau 대시보드를 통해 커리어 궤적을 시각적으로 비교했습니다.</li>
-        </ul>
-        <p><a href="https://github.com/hyuntaepark-gh" target="_blank">GitHub에서 보기</a></p>
-      </div>
-
-      <div class="section-box">
-        <h3>TradingDB – SQL &amp; 데이터베이스 설계</h3>
-        <p class="subtitle">
-          MySQL · ERD · 정규화
-        </p>
-        <ul>
-          <li>고객, 계약, 회사 정보를 포함하는 관계형 스키마를 설계했습니다.</li>
-          <li>리포트 및 집계를 위한 SQL 쿼리와 무결성 체크를 구현했습니다.</li>
-        </ul>
-        <p><a href="https://github.com/hyuntaepark-gh" target="_blank">GitHub에서 보기</a></p>
-      </div>
-
-      <div class="section-box">
-        <h3>SAP S/4HANA Learning Labs</h3>
-        <p class="subtitle">
-          Order-to-Cash · Materials Management
-        </p>
-        <ul>
-          <li>Global Bike 데이터를 활용해 O2C와 MM 프로세스를 end-to-end로 수행했습니다.</li>
-          <li>물류와 회계가 어떻게 연결되는지 문서화하고 정리했습니다.</li>
-        </ul>
-        <p><a href="https://github.com/hyuntaepark-gh" target="_blank">요약 자료 GitHub에서 보기</a></p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>연락처</h2>
-      <div class="section-box">
-        <p>이메일: <a href="mailto:hyuntae.park.9@gmail.com">hyuntae.park.9@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/hyuntaepark-gh" target="_blank">github.com/hyuntaepark-gh</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/hyuntae-park-in" target="_blank">linkedin.com/in/hyuntae-park-in</a></p>
-        <p><a href="../resume.pdf" class="btn" target="_blank">이력서 다운로드 (PDF)</a></p>
-      </div>
-    </section>
-
-    <div class="footer">
-      © <span id="year"></span> Hyuntae Park. Built with GitHub Pages.
+        <a href="#work">전문 분야</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#skills">기술 스택</a>
+        <a href="#contact">연락처</a>
+      </nav>
     </div>
-  </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Data Engineer · Analytics Engineer</div>
+
+          <h1>
+            <span class="gradient-text">데이터 시스템</span>으로 원천 데이터를 비즈니스 의사결정으로 연결합니다.
+          </h1>
+
+          <p class="hero-subtitle">
+            저는 <b>데이터 웨어하우스</b>, <b>KPI 시스템</b>, <b>AI 애널리틱스 제품</b>을 구축하여
+            팀이 무엇이 변했는지, 왜 변했는지, 다음에 무엇을 해야 하는지 이해할 수 있도록 돕습니다.
+          </p>
+
+          <div class="role-strip">
+            <span class="role-pill">데이터 웨어하우징</span>
+            <span class="role-pill">KPI 분석</span>
+            <span class="role-pill">AI 애널리틱스</span>
+            <span class="role-pill">SQL · Python · PostgreSQL</span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">대표 프로젝트 보기</a>
+            <a class="btn btn-resume" href="../resume.pdf" target="_blank" rel="noreferrer">이력서 다운로드</a>
+
+            <span class="cta-break"></span>
+
+            <a class="btn btn-github" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">
+              <span class="btn-symbol">◆</span> GitHub ↗
+            </a>
+
+            <a class="btn btn-linkedin" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+              <span class="btn-symbol">in</span> LinkedIn ↗
+            </a>
+
+            <a class="btn btn-email" href="mailto:hyuntae.park.j@gmail.com">
+              <span class="btn-symbol">✉</span> Gmail
+            </a>
+          </div>
+        </div>
+
+        <div class="profile-shell">
+          <aside class="profile-card" aria-label="Profile">
+            <div class="availability">
+              <span></span>
+              DE / AE 직무 오픈
+            </div>
+
+            <div class="profile-image-wrap">
+              <img src="../img/profile.jpg" alt="Hyuntae Park" class="profile-image" />
+            </div>
+
+            <div class="profile-name">Hyuntae Park</div>
+
+            <div class="profile-title">
+              데이터 엔지니어 · 애널리틱스 엔지니어<br />
+              AI 애널리틱스 빌더
+            </div>
+
+            <div class="pill-row center">
+              <span class="pill">Rutgers MITA</span>
+              <span class="pill">NY / NJ / Remote</span>
+            </div>
+
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <b>DW</b>
+                <span>모델링</span>
+              </div>
+              <div class="mini-stat">
+                <b>KPI</b>
+                <span>분석</span>
+              </div>
+              <div class="mini-stat">
+                <b>AI</b>
+                <span>리포팅</span>
+              </div>
+            </div>
+
+            <div class="profile-highlight">
+              <b>Focus:</b> 신뢰할 수 있는 데이터 모델, 메트릭 레이어, 경영진 리포팅,
+              AI 기반 KPI 설명 시스템을 구축합니다.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Core Direction</div>
+        <h2>전문 분야</h2>
+        <p class="lead">
+          데이터 엔지니어링, 애널리틱스 엔지니어링, AI 기반 비즈니스 리포팅을 연결하는 영역에 집중합니다.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card what-card col-4">
+          <div class="icon">🏗️</div>
+          <h3>데이터 웨어하우징</h3>
+          <p>
+            PostgreSQL, 차원 모델링, ETL 파이프라인, 마트, 검증 체크를 활용해
+            신뢰할 수 있는 데이터 구조를 설계합니다.
+          </p>
+        </div>
+
+        <div class="card what-card col-4">
+          <div class="icon">📊</div>
+          <h3>애널리틱스 엔지니어링</h3>
+          <p>
+            KPI 프레임워크, 코호트 분석, 퍼널 분석, 매출 원인 분해,
+            경영진 리포팅 레이어를 설계합니다.
+          </p>
+        </div>
+
+        <div class="card what-card col-4">
+          <div class="icon">🤖</div>
+          <h3>AI 애널리틱스</h3>
+          <p>
+            KPI 변화를 설명하고, 원인을 식별하며, 비즈니스 리포팅을 자동화하는
+            AI 기반 분석 도구를 만듭니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Selected Work</div>
+        <h2>대표 프로젝트</h2>
+        <p class="lead">
+          데이터 엔지니어링, 애널리틱스 엔지니어링, AI 애널리틱스 방향성을 가장 잘 보여주는
+          세 가지 프로젝트입니다.
+        </p>
+      </div>
+
+      <div class="grid">
+        <a class="card project-card col-4" href="https://github.com/hyuntaepark-gh/End-To-End-Retail-Data-Warehouse" target="_blank" rel="noreferrer">
+          <div class="project-visual">
+            <div class="visual-top">
+              <span>Warehouse</span>
+              <span>KPI Mart</span>
+            </div>
+            <div class="visual-window">
+              <div class="visual-line medium"></div>
+              <div class="visual-line short"></div>
+              <div class="visual-bars">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <span class="project-label">Data Engineering</span>
+            <h3>Enterprise Retail Data Warehouse</h3>
+            <p>
+              스테이징, 웨어하우스, 마트 레이어로 구성된 스타 스키마 기반
+              리테일 데이터 웨어하우스 프로젝트입니다.
+            </p>
+
+            <div class="impact">
+              <b>Impact:</b> 원천 리테일 데이터를 신뢰 가능한 KPI 마트로 변환하여
+              대시보드와 의사결정에 활용할 수 있도록 설계했습니다.
+            </div>
+
+            <div class="pill-row">
+              <span class="pill">Star Schema</span>
+              <span class="pill">ETL</span>
+              <span class="pill">KPI Mart</span>
+            </div>
+
+            <div class="project-link">레포지토리 보기 ↗</div>
+          </div>
+        </a>
+
+        <a class="card project-card col-4" href="https://github.com/hyuntaepark-gh/olist-sql-analytics" target="_blank" rel="noreferrer">
+          <div class="project-visual">
+            <div class="visual-top">
+              <span>SQL Analytics</span>
+              <span>Revenue Drivers</span>
+            </div>
+            <div class="visual-window">
+              <div class="visual-line short"></div>
+              <div class="visual-line medium"></div>
+              <div class="visual-bars">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <span class="project-label">Analytics Engineering</span>
+            <h3>Business KPI Analytics Platform</h3>
+            <p>
+              매출 원인 분해, 코호트, 퍼널 이탈, 고객 행동을 SQL 기반으로 분석하는
+              비즈니스 KPI 분석 프로젝트입니다.
+            </p>
+
+            <div class="impact">
+              <b>Impact:</b> 무엇이 변했는지, 왜 변했는지, 어떤 액션이 필요한지를
+              SQL 분석 결과로 설명할 수 있도록 구성했습니다.
+            </div>
+
+            <div class="pill-row">
+              <span class="pill">Advanced SQL</span>
+              <span class="pill">Cohort</span>
+              <span class="pill">Funnel</span>
+            </div>
+
+            <div class="project-link">레포지토리 보기 ↗</div>
+          </div>
+        </a>
+
+        <a class="card project-card col-4" href="https://github.com/hyuntaepark-gh/AI-Executive-KPI-Intelligence-Micro-SaaS" target="_blank" rel="noreferrer">
+          <div class="project-visual">
+            <div class="visual-top">
+              <span>AI KPI</span>
+              <span>Executive Summary</span>
+            </div>
+            <div class="visual-window">
+              <div class="visual-line medium"></div>
+              <div class="visual-line medium"></div>
+              <div class="visual-bars">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <span class="project-label">AI Analytics</span>
+            <h3>AI Executive KPI Intelligence</h3>
+            <p>
+              KPI 변화를 설명하고 경영진 요약을 생성하는 LLM 기반
+              AI 애널리틱스 시스템입니다.
+            </p>
+
+            <div class="impact">
+              <b>Impact:</b> KPI 해석, 원인 분석, 리포팅 문장을 자동화하여
+              반복적인 분석 리포트 작성 부담을 줄이는 방향으로 설계했습니다.
+            </div>
+
+            <div class="pill-row">
+              <span class="pill">LLM</span>
+              <span class="pill">KPI Explanation</span>
+              <span class="pill">AI Report</span>
+            </div>
+
+            <div class="project-link">레포지토리 보기 ↗</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="cta-row" style="margin-top: 24px;">
+        <a class="btn btn-github" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">
+          <span class="btn-symbol">◆</span> GitHub에서 더 보기 ↗
+        </a>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Technical Stack</div>
+        <h2>핵심 기술 스택</h2>
+        <p class="lead">
+          데이터 플랫폼, KPI 시스템, 대시보드, AI 애널리틱스 제품을 만들기 위한 핵심 기술입니다.
+        </p>
+      </div>
+
+      <div class="card skills-card col-12">
+        <div class="skills-wrap">
+          <span class="skill">PostgreSQL</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Python</span>
+          <span class="skill">Data Warehousing</span>
+          <span class="skill">Star Schema</span>
+          <span class="skill">ETL / ELT</span>
+          <span class="skill">KPI Design</span>
+          <span class="skill">Cohort Analysis</span>
+          <span class="skill">Funnel Analysis</span>
+          <span class="skill">Revenue Driver Analysis</span>
+          <span class="skill">Streamlit</span>
+          <span class="skill">Tableau</span>
+          <span class="skill">LLM Integration</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">Business Analytics</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta-banner">
+        <div>
+          <h2>Data Engineering, Analytics Engineering, AI Analytics 직무에 열려 있습니다.</h2>
+          <p>
+            NY / NJ 지역 기반이며, Remote · Hybrid · On-site 기회 모두 열려 있습니다.
+          </p>
+        </div>
+
+        <a class="btn btn-resume" href="../resume.pdf" target="_blank" rel="noreferrer">
+          이력서 다운로드
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="card contact-card">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h2>연락하기</h2>
+          <p class="lead">
+            LinkedIn, GitHub, 또는 이메일로 연락하실 수 있습니다.
+          </p>
+        </div>
+
+        <div class="cta-row" style="margin-top: 0;">
+          <a class="btn btn-linkedin" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+            <span class="btn-symbol">in</span> LinkedIn ↗
+          </a>
+
+          <a class="btn btn-github" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">
+            <span class="btn-symbol">◆</span> GitHub ↗
+          </a>
+
+          <a class="btn btn-email" href="mailto:hyuntae.park.j@gmail.com">
+            <span class="btn-symbol">✉</span> Gmail
+          </a>
+
+          <a class="btn btn-resume" href="../resume.pdf" target="_blank" rel="noreferrer">
+            이력서 ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="y"></span> Hyuntae Park · 데이터 엔지니어링 & AI 애널리틱스 포트폴리오
+    </footer>
+  </main>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const toggle = document.getElementById("themeToggle");
-    const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    let theme = stored || (prefersDark ? "dark" : "dark");
-
-    if (theme === "light") {
-      document.body.classList.add("light");
-      toggle.textContent = "Dark";
-    } else {
-      toggle.textContent = "Light";
-    }
-
-    toggle.addEventListener("click", () => {
-      document.body.classList.toggle("light");
-      const isLight = document.body.classList.contains("light");
-      toggle.textContent = isLight ? "Dark" : "Light";
-      localStorage.setItem("theme", isLight ? "light" : "dark");
-    });
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
