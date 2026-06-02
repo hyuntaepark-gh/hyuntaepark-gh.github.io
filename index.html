@@ -25,17 +25,15 @@
       --soft: #f8fafc;
       --chip: #f1f5f9;
       --accent: #2563eb;
+      --linkedin: #0a66c2;
+      --github: #111827;
       --dark: #020617;
       --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -83,13 +81,9 @@
       color: var(--muted);
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: var(--accent); }
 
-    .hero {
-      padding: 72px 0 52px;
-    }
+    .hero { padding: 72px 0 52px; }
 
     .hero-grid {
       display: grid;
@@ -182,6 +176,24 @@
       color: #fff;
     }
 
+    .btn-resume {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .btn-github {
+      background: var(--github);
+      border-color: var(--github);
+      color: #fff;
+    }
+
+    .btn-linkedin {
+      background: var(--linkedin);
+      border-color: var(--linkedin);
+      color: #fff;
+    }
+
     .profile-card {
       border-radius: 30px;
       border: 1px solid var(--border);
@@ -238,17 +250,11 @@
       line-height: 1.55;
     }
 
-    .profile-highlight b {
-      color: var(--fg);
-    }
+    .profile-highlight b { color: var(--fg); }
 
-    .section {
-      padding: 42px 0;
-    }
+    .section { padding: 42px 0; }
 
-    .section-header {
-      margin-bottom: 22px;
-    }
+    .section-header { margin-bottom: 22px; }
 
     .section h2 {
       margin: 0;
@@ -269,17 +275,8 @@
       gap: 18px;
     }
 
-    .col-4 {
-      grid-column: span 4;
-    }
-
-    .col-6 {
-      grid-column: span 6;
-    }
-
-    .col-12 {
-      grid-column: span 12;
-    }
+    .col-4 { grid-column: span 4; }
+    .col-12 { grid-column: span 12; }
 
     .card {
       border: 1px solid var(--border);
@@ -307,9 +304,7 @@
       font-size: 14.5px;
     }
 
-    .what-card {
-      min-height: 190px;
-    }
+    .what-card { min-height: 190px; }
 
     .icon {
       width: 42px;
@@ -344,9 +339,7 @@
       padding: 20px;
     }
 
-    .project-body {
-      padding: 22px;
-    }
+    .project-body { padding: 22px; }
 
     .project-label {
       display: inline-flex;
@@ -369,9 +362,7 @@
       line-height: 1.55;
     }
 
-    .impact b {
-      color: var(--fg);
-    }
+    .impact b { color: var(--fg); }
 
     .pill-row {
       display: flex;
@@ -380,9 +371,7 @@
       margin-top: 14px;
     }
 
-    .pill-row.center {
-      justify-content: center;
-    }
+    .pill-row.center { justify-content: center; }
 
     .pill {
       padding: 6px 10px;
@@ -421,21 +410,12 @@
       gap: 20px;
     }
 
-    .cta-banner h2 {
-      color: #fff;
-    }
+    .cta-banner h2 { color: #fff; }
 
     .cta-banner p {
       color: #cbd5e1;
       margin: 10px 0 0;
       line-height: 1.6;
-    }
-
-    .cta-banner .btn {
-      background: #fff;
-      color: var(--dark);
-      border-color: #fff;
-      white-space: nowrap;
     }
 
     .footer {
@@ -446,22 +426,13 @@
     }
 
     @media (max-width: 920px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-grid { grid-template-columns: 1fr; }
 
-      h1 {
-        font-size: 44px;
-      }
+      h1 { font-size: 44px; }
 
-      .col-4,
-      .col-6 {
-        grid-column: span 12;
-      }
+      .col-4 { grid-column: span 12; }
 
-      .profile-card {
-        max-width: 520px;
-      }
+      .profile-card { max-width: 520px; }
 
       .cta-banner {
         flex-direction: column;
@@ -470,9 +441,7 @@
     }
 
     @media (max-width: 560px) {
-      .container {
-        padding: 0 16px;
-      }
+      .container { padding: 0 16px; }
 
       .nav-inner {
         height: auto;
@@ -489,30 +458,20 @@
         font-size: 13px;
       }
 
-      .hero {
-        padding: 46px 0 34px;
-      }
+      .hero { padding: 46px 0 34px; }
 
-      h1 {
-        font-size: 36px;
-      }
+      h1 { font-size: 36px; }
 
-      .hero-subtitle {
-        font-size: 16px;
-      }
+      .hero-subtitle { font-size: 16px; }
 
-      .btn {
-        width: 100%;
-      }
+      .btn { width: 100%; }
 
       .profile-image-wrap {
         width: 180px;
         height: 180px;
       }
 
-      .profile-card {
-        padding: 24px;
-      }
+      .profile-card { padding: 24px; }
     }
   </style>
 </head>
@@ -555,19 +514,15 @@
 
           <div class="cta-row">
             <a class="btn btn-primary" href="#projects">View Top Projects</a>
-            <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
-            <a class="btn" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="btn btn-resume" href="resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+            <a class="btn btn-github" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="btn btn-linkedin" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
           </div>
         </div>
 
         <aside class="profile-card" aria-label="Profile">
           <div class="profile-image-wrap">
-            <img
-              src="img/profile.jpg"
-              alt="Hyuntae Park"
-              class="profile-image"
-            />
+            <img src="img/profile.jpg" alt="Hyuntae Park" class="profile-image" />
           </div>
 
           <div class="profile-name">Hyuntae Park</div>
@@ -713,7 +668,7 @@
       </div>
 
       <div class="cta-row" style="margin-top: 22px;">
-        <a class="btn" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">
+        <a class="btn btn-github" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">
           View More Projects on GitHub ↗
         </a>
       </div>
@@ -757,7 +712,7 @@
           </p>
         </div>
 
-        <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">
+        <a class="btn btn-resume" href="resume.pdf" target="_blank" rel="noreferrer">
           Download Resume
         </a>
       </div>
@@ -772,9 +727,9 @@
       </div>
 
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        <a class="btn" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">GitHub ↗</a>
-        <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
+        <a class="btn btn-linkedin" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a class="btn btn-github" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a class="btn btn-resume" href="resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
       </div>
     </section>
 
