@@ -59,7 +59,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255,255,255,0.92);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -182,91 +182,64 @@
       color: #fff;
     }
 
-    .hero-panel {
-      border-radius: 28px;
+    .profile-card {
+      border-radius: 30px;
       border: 1px solid var(--border);
       background:
-        radial-gradient(circle at top left, rgba(37,99,235,0.12), transparent 30%),
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.11), transparent 34%),
         linear-gradient(180deg, #ffffff, #f8fafc);
-      padding: 24px;
+      padding: 34px;
       box-shadow: var(--shadow);
+      text-align: center;
     }
 
-    .dashboard-preview {
-      border-radius: 22px;
-      background: #020617;
-      color: white;
-      padding: 22px;
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .profile-image-wrap {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      padding: 7px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 38px rgba(15, 23, 42, 0.12);
     }
 
-    .preview-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #cbd5e1;
-      font-size: 13px;
-    }
-
-    .preview-title {
-      margin-top: 28px;
-    }
-
-    .preview-title strong {
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
       display: block;
-      font-size: 32px;
+    }
+
+    .profile-name {
+      font-size: 28px;
+      font-weight: 900;
       letter-spacing: -0.04em;
     }
 
-    .preview-title span {
-      display: block;
+    .profile-title {
       margin-top: 8px;
-      color: #94a3b8;
-      line-height: 1.5;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+      font-weight: 650;
     }
 
-    .preview-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 24px;
+    .profile-highlight {
+      margin: 22px 0 0;
+      padding: 16px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
     }
 
-    .preview-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 14px;
-    }
-
-    .preview-card b {
-      display: block;
-      font-size: 22px;
-    }
-
-    .preview-card span {
-      display: block;
-      margin-top: 4px;
-      color: #94a3b8;
-      font-size: 12px;
-    }
-
-    .preview-bar {
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.1);
-      overflow: hidden;
-      margin-top: 22px;
-    }
-
-    .preview-bar div {
-      width: 76%;
-      height: 100%;
-      background: #38bdf8;
-      border-radius: 999px;
+    .profile-highlight b {
+      color: var(--fg);
     }
 
     .section {
@@ -358,7 +331,7 @@
     .project-image {
       height: 190px;
       background:
-        linear-gradient(135deg, rgba(37,99,235,0.12), rgba(15,23,42,0.05)),
+        linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(15, 23, 42, 0.05)),
         #f8fafc;
       border-bottom: 1px solid var(--border);
       display: flex;
@@ -405,6 +378,10 @@
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 14px;
+    }
+
+    .pill-row.center {
+      justify-content: center;
     }
 
     .pill {
@@ -482,6 +459,10 @@
         grid-column: span 12;
       }
 
+      .profile-card {
+        max-width: 520px;
+      }
+
       .cta-banner {
         flex-direction: column;
         align-items: flex-start;
@@ -524,12 +505,13 @@
         width: 100%;
       }
 
-      .preview-grid {
-        grid-template-columns: 1fr;
+      .profile-image-wrap {
+        width: 180px;
+        height: 180px;
       }
 
-      .dashboard-preview {
-        min-height: auto;
+      .profile-card {
+        padding: 24px;
       }
     }
   </style>
@@ -579,47 +561,33 @@
           </div>
         </div>
 
-        <div class="hero-panel">
-          <div class="dashboard-preview">
-            <div class="preview-top">
-              <span>Analytics System Preview</span>
-              <span>Live KPI Layer</span>
-            </div>
-
-            <div class="preview-title">
-              <strong>Executive KPI Intelligence</strong>
-              <span>
-                Data warehouse → metric layer → dashboard → AI explanation
-              </span>
-            </div>
-
-            <div class="preview-grid">
-              <div class="preview-card">
-                <b>Revenue</b>
-                <span>Driver analysis</span>
-              </div>
-
-              <div class="preview-card">
-                <b>KPI</b>
-                <span>Metric consistency</span>
-              </div>
-
-              <div class="preview-card">
-                <b>SQL</b>
-                <span>Cohort / funnel</span>
-              </div>
-
-              <div class="preview-card">
-                <b>AI</b>
-                <span>Root-cause summary</span>
-              </div>
-            </div>
-
-            <div>
-              <div class="preview-bar"><div></div></div>
-            </div>
+        <aside class="profile-card" aria-label="Profile">
+          <div class="profile-image-wrap">
+            <img
+              src="img/profile.jpg"
+              alt="Hyuntae Park"
+              class="profile-image"
+            />
           </div>
-        </div>
+
+          <div class="profile-name">Hyuntae Park</div>
+
+          <div class="profile-title">
+            Data Engineer<br />
+            Analytics Engineer<br />
+            AI Analytics Builder
+          </div>
+
+          <div class="pill-row center">
+            <span class="pill">Rutgers MITA</span>
+            <span class="pill">NY / Remote</span>
+          </div>
+
+          <div class="profile-highlight">
+            <b>Focus:</b> data warehouses, KPI systems, business analytics,
+            and AI-powered reporting products.
+          </div>
+        </aside>
       </div>
     </section>
 
