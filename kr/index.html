@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Hyuntae Park | 데이터 엔지니어링 & AI 애널리틱스</title>
-  <meta name="description" content="Hyuntae Park — 데이터 웨어하우스, KPI 시스템, AI 애널리틱스 제품을 만드는 데이터 엔지니어 / 애널리틱스 엔지니어 포트폴리오." />
+  <meta name="description" content="Hyuntae Park — 데이터 플랫폼, KPI 시스템, AI 애널리틱스 제품을 만드는 데이터 엔지니어 / 애널리틱스 엔지니어 포트폴리오." />
 
   <meta property="og:title" content="Hyuntae Park | 데이터 엔지니어링 & AI 애널리틱스" />
-  <meta property="og:description" content="데이터 웨어하우스, KPI 시스템, AI 애널리틱스 제품을 만드는 포트폴리오." />
+  <meta property="og:description" content="데이터 플랫폼, KPI 시스템, AI 애널리틱스 제품을 구축하는 포트폴리오." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://hyuntaepark-gh.github.io/kr/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -18,7 +18,7 @@
   <style>
     :root {
       --bg: #ffffff;
-      --fg: #0f172a;
+      --fg: #111827;
       --muted: #475569;
       --subtle: #64748b;
       --border: #e2e8f0;
@@ -37,26 +37,22 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 32rem),
-        radial-gradient(circle at top right, rgba(14, 165, 233, 0.10), transparent 34rem),
-        #ffffff;
+        radial-gradient(circle at 10% 0%, rgba(37, 99, 235, 0.08), transparent 34rem),
+        radial-gradient(circle at 90% 5%, rgba(14, 165, 233, 0.08), transparent 34rem),
+        linear-gradient(180deg, #ffffff 0%, #ffffff 58%, #f8fafc 100%);
       color: var(--fg);
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Helvetica, Arial, sans-serif;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .container {
-      max-width: 1160px;
+      max-width: 1140px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -65,13 +61,13 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.86);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     }
 
     .nav-inner {
-      height: 72px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -95,6 +91,7 @@
 
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 8px;
       font-size: 14px;
       color: var(--muted);
@@ -111,51 +108,39 @@
       color: var(--accent);
     }
 
-    .hero {
-      padding: 86px 0 56px;
+    .language-select {
+      margin-left: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--fg);
+      font-size: 13px;
+      font-weight: 850;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
     }
+
+    .hero { padding: 76px 0 30px; }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
-      gap: 48px;
+      grid-template-columns: minmax(0, 1.14fr) minmax(330px, 0.86fr);
+      gap: 54px;
       align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--accent);
-      background: rgba(37, 99, 235, 0.08);
-      border: 1px solid rgba(37, 99, 235, 0.16);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--green);
     }
 
     h1 {
-      margin: 22px 0 18px;
-      max-width: 790px;
-      font-size: clamp(40px, 5.8vw, 68px);
-      line-height: 1.04;
-      letter-spacing: -0.06em;
+      margin: 0 0 18px;
+      max-width: 760px;
+      font-size: clamp(40px, 4.8vw, 58px);
+      line-height: 1.12;
+      letter-spacing: -0.045em;
       word-break: keep-all;
     }
 
     .gradient-text {
-      background: linear-gradient(90deg, #0f172a, #1d4ed8);
+      background: linear-gradient(90deg, #0f172a, #2563eb);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -163,16 +148,14 @@
 
     .hero-subtitle {
       margin: 0;
-      max-width: 690px;
+      max-width: 680px;
       color: var(--muted);
       font-size: 18px;
       line-height: 1.8;
       word-break: keep-all;
     }
 
-    .hero-subtitle b {
-      color: var(--fg);
-    }
+    .hero-subtitle b { color: var(--fg); }
 
     .role-strip {
       display: flex;
@@ -184,7 +167,7 @@
     .role-pill {
       padding: 9px 12px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.88);
       border: 1px solid var(--border);
       color: var(--fg);
       font-size: 13px;
@@ -267,24 +250,26 @@
 
     .profile-shell {
       position: relative;
+      max-width: 420px;
+      margin-left: auto;
     }
 
     .profile-shell::before {
       content: "";
       position: absolute;
-      inset: -14px;
-      border-radius: 36px;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.18), rgba(14, 165, 233, 0.08), rgba(15, 23, 42, 0.05));
+      inset: -12px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(14, 165, 233, 0.07), rgba(15, 23, 42, 0.05));
       z-index: -1;
       filter: blur(2px);
     }
 
     .profile-card {
-      border-radius: 32px;
+      border-radius: 30px;
       border: 1px solid rgba(226, 232, 240, 0.9);
-      background: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(18px);
-      padding: 34px;
+      padding: 28px;
       box-shadow: var(--shadow);
       text-align: center;
     }
@@ -293,7 +278,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       padding: 8px 12px;
       border-radius: 999px;
       background: #ecfdf5;
@@ -311,14 +296,14 @@
     }
 
     .profile-image-wrap {
-      width: 222px;
-      height: 222px;
-      margin: 0 auto 22px;
+      width: 178px;
+      height: 178px;
+      margin: 0 auto 18px;
       border-radius: 50%;
-      padding: 7px;
+      padding: 6px;
       background: #ffffff;
       border: 1px solid var(--border);
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
     }
 
     .profile-image {
@@ -331,71 +316,73 @@
     }
 
     .profile-name {
-      font-size: 30px;
+      font-size: 27px;
       font-weight: 950;
-      letter-spacing: -0.055em;
+      letter-spacing: -0.045em;
     }
 
     .profile-title {
-      margin-top: 9px;
+      margin-top: 8px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
+      line-height: 1.58;
+      font-weight: 700;
+    }
+
+    .education {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12.5px;
       line-height: 1.6;
       font-weight: 700;
     }
 
     .profile-highlight {
-      margin: 22px 0 0;
-      padding: 16px;
-      border-radius: 20px;
+      margin: 18px 0 0;
+      padding: 14px;
+      border-radius: 18px;
       background: #ffffff;
       border: 1px solid var(--border);
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.65;
       text-align: left;
       word-break: keep-all;
     }
 
-    .profile-highlight b {
-      color: var(--fg);
-    }
+    .profile-highlight b { color: var(--fg); }
 
     .mini-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 18px;
+      gap: 8px;
+      margin-top: 16px;
     }
 
     .mini-stat {
-      padding: 12px 10px;
-      border-radius: 18px;
+      padding: 10px 8px;
+      border-radius: 16px;
       background: #fff;
       border: 1px solid var(--border);
     }
 
     .mini-stat b {
       display: block;
-      font-size: 20px;
+      font-size: 18px;
       letter-spacing: -0.04em;
     }
 
     .mini-stat span {
       display: block;
-      margin-top: 3px;
+      margin-top: 2px;
       color: var(--subtle);
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
     }
 
-    .section {
-      padding: 48px 0;
-    }
+    .section { padding: 38px 0; }
 
-    .section-header {
-      margin-bottom: 24px;
-    }
+    .section-header { margin-bottom: 22px; }
 
     .section-kicker {
       color: var(--accent);
@@ -408,9 +395,9 @@
 
     .section h2 {
       margin: 0;
-      font-size: clamp(28px, 4vw, 38px);
-      line-height: 1.1;
-      letter-spacing: -0.05em;
+      font-size: clamp(28px, 3.5vw, 36px);
+      line-height: 1.12;
+      letter-spacing: -0.045em;
       word-break: keep-all;
     }
 
@@ -428,18 +415,13 @@
       gap: 20px;
     }
 
-    .col-4 {
-      grid-column: span 4;
-    }
-
-    .col-12 {
-      grid-column: span 12;
-    }
+    .col-4 { grid-column: span 4; }
+    .col-12 { grid-column: span 12; }
 
     .card {
       border: 1px solid rgba(226, 232, 240, 0.9);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(12px);
       padding: 24px;
       transition: 180ms ease;
@@ -467,20 +449,18 @@
       word-break: keep-all;
     }
 
-    .what-card {
-      min-height: 210px;
-    }
+    .what-card { min-height: 196px; }
 
     .icon {
-      width: 48px;
-      height: 48px;
+      width: 46px;
+      height: 46px;
       border-radius: 16px;
       display: grid;
       place-items: center;
       background: linear-gradient(180deg, #ffffff, #f8fafc);
       border: 1px solid var(--border);
-      margin-bottom: 18px;
-      font-size: 22px;
+      margin-bottom: 16px;
+      font-size: 21px;
       box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
     }
 
@@ -489,11 +469,11 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      min-height: 545px;
+      min-height: 520px;
     }
 
     .project-visual {
-      height: 205px;
+      height: 190px;
       background:
         radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 45%),
         linear-gradient(135deg, #f8fafc, #eef2ff);
@@ -529,20 +509,15 @@
       margin-bottom: 9px;
     }
 
-    .visual-line.short {
-      width: 58%;
-    }
-
-    .visual-line.medium {
-      width: 78%;
-    }
+    .visual-line.short { width: 58%; }
+    .visual-line.medium { width: 78%; }
 
     .visual-bars {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 8px;
       align-items: end;
-      height: 58px;
+      height: 54px;
       margin-top: 12px;
     }
 
@@ -552,13 +527,13 @@
       background: linear-gradient(180deg, #60a5fa, #2563eb);
     }
 
-    .visual-bars span:nth-child(1) { height: 34px; }
-    .visual-bars span:nth-child(2) { height: 48px; }
-    .visual-bars span:nth-child(3) { height: 40px; }
-    .visual-bars span:nth-child(4) { height: 56px; }
+    .visual-bars span:nth-child(1) { height: 32px; }
+    .visual-bars span:nth-child(2) { height: 46px; }
+    .visual-bars span:nth-child(3) { height: 38px; }
+    .visual-bars span:nth-child(4) { height: 52px; }
 
     .project-body {
-      padding: 24px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -575,8 +550,8 @@
     }
 
     .impact {
-      margin-top: 16px;
-      padding: 14px;
+      margin-top: 15px;
+      padding: 13px;
       border-radius: 18px;
       background: var(--soft);
       border: 1px solid var(--border);
@@ -586,20 +561,16 @@
       word-break: keep-all;
     }
 
-    .impact b {
-      color: var(--fg);
-    }
+    .impact b { color: var(--fg); }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 16px;
+      margin-top: 15px;
     }
 
-    .pill-row.center {
-      justify-content: center;
-    }
+    .pill-row.center { justify-content: center; }
 
     .pill {
       padding: 7px 10px;
@@ -619,9 +590,7 @@
       font-weight: 950;
     }
 
-    .skills-card {
-      padding: 28px;
-    }
+    .skills-card { padding: 26px; }
 
     .skills-wrap {
       display: flex;
@@ -640,39 +609,6 @@
       box-shadow: 0 8px 18px rgba(15, 23, 42, 0.035);
     }
 
-    .cta-banner {
-      position: relative;
-      overflow: hidden;
-      border-radius: 34px;
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.34), transparent 36%),
-        linear-gradient(135deg, #020617, #0f172a);
-      color: #fff;
-      padding: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .cta-banner h2 {
-      color: #fff;
-      margin: 0;
-      font-size: clamp(28px, 4vw, 38px);
-      line-height: 1.16;
-      letter-spacing: -0.05em;
-      word-break: keep-all;
-    }
-
-    .cta-banner p {
-      color: #cbd5e1;
-      margin: 12px 0 0;
-      line-height: 1.7;
-      max-width: 690px;
-      word-break: keep-all;
-    }
-
     .contact-card {
       display: flex;
       align-items: center;
@@ -688,23 +624,12 @@
     }
 
     @media (max-width: 960px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .profile-shell { margin-left: 0; }
+      .profile-card { max-width: 520px; }
+      .col-4 { grid-column: span 12; }
+      .project-card { min-height: auto; }
 
-      .profile-card {
-        max-width: 560px;
-      }
-
-      .col-4 {
-        grid-column: span 12;
-      }
-
-      .project-card {
-        min-height: auto;
-      }
-
-      .cta-banner,
       .contact-card {
         flex-direction: column;
         align-items: flex-start;
@@ -712,9 +637,7 @@
     }
 
     @media (max-width: 600px) {
-      .container {
-        padding: 0 16px;
-      }
+      .container { padding: 0 16px; }
 
       .nav-inner {
         height: auto;
@@ -727,50 +650,35 @@
       .nav-links {
         width: 100%;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: 4px;
         font-size: 12px;
       }
 
-      .nav-links a {
-        padding: 7px 6px;
+      .nav-links a { padding: 7px 6px; }
+
+      .language-select {
+        width: 100%;
+        margin-left: 0;
       }
 
-      .hero {
-        padding: 54px 0 34px;
-      }
+      .hero { padding: 50px 0 30px; }
 
       h1 {
         font-size: clamp(36px, 12vw, 48px);
       }
 
-      .hero-subtitle {
-        font-size: 16px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .cta-break {
-        display: none;
-      }
-
-      .profile-card {
-        padding: 24px;
-      }
+      .hero-subtitle { font-size: 16px; }
+      .btn { width: 100%; }
+      .cta-break { display: none; }
+      .profile-card { padding: 24px; }
 
       .profile-image-wrap {
-        width: 180px;
-        height: 180px;
+        width: 160px;
+        height: 160px;
       }
 
-      .mini-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .cta-banner {
-        padding: 28px;
-      }
+      .mini-stats { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -784,11 +692,15 @@
       </a>
 
       <nav class="nav-links">
-        <a href="/">EN</a>
         <a href="#work">전문 분야</a>
         <a href="#projects">프로젝트</a>
         <a href="#skills">기술 스택</a>
         <a href="#contact">연락처</a>
+
+        <select class="language-select" onchange="location.href=this.value" aria-label="언어 선택">
+          <option value="/">English</option>
+          <option value="/kr/" selected>한국어</option>
+        </select>
       </nav>
     </div>
   </header>
@@ -797,10 +709,9 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <div class="eyebrow">Data Engineer · Analytics Engineer</div>
-
           <h1>
-            <span class="gradient-text">데이터 시스템</span>으로 원천 데이터를 비즈니스 의사결정으로 연결합니다.
+            비즈니스 의사결정을 위한
+            <span class="gradient-text">데이터 플랫폼</span>을 구축합니다.
           </h1>
 
           <p class="hero-subtitle">
@@ -853,8 +764,14 @@
               AI 애널리틱스 빌더
             </div>
 
+            <div class="education">
+              Rutgers University MITA<br />
+              Baruch College BBA, Marketing Analytics
+            </div>
+
             <div class="pill-row center">
-              <span class="pill">Rutgers MITA</span>
+              <span class="pill">MS IT & Analytics</span>
+              <span class="pill">BBA Marketing Analytics</span>
               <span class="pill">NY / NJ / Remote</span>
             </div>
 
@@ -1081,21 +998,6 @@
           <span class="skill">GitHub</span>
           <span class="skill">Business Analytics</span>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="cta-banner">
-        <div>
-          <h2>Data Engineering, Analytics Engineering, AI Analytics 직무에 열려 있습니다.</h2>
-          <p>
-            NY / NJ 지역 기반이며, Remote · Hybrid · On-site 기회 모두 열려 있습니다.
-          </p>
-        </div>
-
-        <a class="btn btn-resume" href="../resume.pdf" target="_blank" rel="noreferrer">
-          이력서 다운로드
-        </a>
       </div>
     </section>
 
