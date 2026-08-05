@@ -1,0 +1,1435 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Hyuntae Park | Analytics Engineer & Data Product Builder</title>
+  <meta name="description" content="Hyuntae Park builds data warehouses, business intelligence solutions, SQL analytics, and AI-powered data products." />
+
+  <meta property="og:title" content="Hyuntae Park | Analytics Engineer & Data Product Builder" />
+  <meta property="og:description" content="Data warehouses, BI solutions, SQL analytics, and AI-powered data products." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hyuntaepark-gh.github.io/" />
+  <meta property="og:image" content="https://hyuntaepark-gh.github.io/img/portfolio-preview.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-2: #f1f5f9;
+      --text: #0f172a;
+      --muted: #475569;
+      --subtle: #64748b;
+      --border: #dbe4ee;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --green: #16a34a;
+      --purple: #7c3aed;
+      --navy: #111c3f;
+      --shadow: 0 20px 55px rgba(15, 23, 42, 0.09);
+      --shadow-hover: 0 28px 70px rgba(15, 23, 42, 0.15);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 7% 3%, rgba(37, 99, 235, 0.09), transparent 28rem),
+        radial-gradient(circle at 94% 8%, rgba(124, 58, 237, 0.08), transparent 28rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, select { font: inherit; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section { padding: 78px 0; }
+
+    .section-soft {
+      background: rgba(255,255,255,.62);
+      border-top: 1px solid rgba(219,228,238,.9);
+      border-bottom: 1px solid rgba(219,228,238,.9);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248,250,252,.9);
+      border-bottom: 1px solid rgba(219,228,238,.9);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -.03em;
+      white-space: nowrap;
+    }
+
+    .brand-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 6px rgba(34,197,94,.14);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .nav-links a {
+      padding: 10px 12px;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+      background: var(--surface);
+    }
+
+    .language-select {
+      margin-left: 4px;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 750;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .hero { padding: 82px 0 58px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow,
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 720px;
+      font-size: clamp(48px, 6vw, 74px);
+      line-height: 1.02;
+      letter-spacing: -.06em;
+    }
+
+    .accent { color: #38a0ff; }
+
+    .hero-copy {
+      max-width: 670px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .hero-copy strong { color: var(--text); }
+
+    .availability {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 9px;
+      width: fit-content;
+      max-width: 590px;
+      margin-top: 22px;
+      padding: 10px 14px;
+      border: 1px solid #bbf7d0;
+      border-radius: 14px;
+      background: #f0fdf4;
+      color: #166534;
+      font-size: 14px;
+      font-weight: 850;
+      line-height: 1.45;
+    }
+
+    .availability::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      flex: 0 0 auto;
+      margin-top: 5px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 430px;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(15,23,42,.08);
+      transition: 160ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-dark { background: var(--navy); color: #fff; }
+    .btn-linkedin { background: #0a66c2; color: #fff; }
+    .btn-outline { background: var(--surface); color: var(--text); border-color: var(--border); }
+
+    .profile-card {
+      position: relative;
+      overflow: hidden;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.95);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 6px;
+      background: linear-gradient(90deg, #38a0ff, #34d399, #a78bfa);
+    }
+
+    .profile-top {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      object-position: center;
+      border: 4px solid #fff;
+      border-radius: 24px;
+      background: var(--surface-2);
+      box-shadow: 0 12px 30px rgba(15,23,42,.13);
+    }
+
+    .profile-name {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 950;
+      letter-spacing: -.045em;
+    }
+
+    .profile-role {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 750;
+      line-height: 1.55;
+    }
+
+    .profile-meta {
+      display: grid;
+      gap: 11px;
+      margin-top: 26px;
+    }
+
+    .meta-row {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 16px;
+      padding-bottom: 11px;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .meta-row:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .meta-label { color: var(--subtle); font-weight: 750; }
+    .meta-value { color: var(--text); font-weight: 850; }
+
+    .profile-tags,
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .profile-tags { margin-top: 22px; }
+
+    .chip {
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface-2);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .section-head { margin-bottom: 32px; }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(36px, 4.5vw, 56px);
+      line-height: 1.04;
+      letter-spacing: -.055em;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 72px;
+      height: 6px;
+      margin-top: 13px;
+      border-radius: 999px;
+      background: #fb7185;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.72;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 22px;
+    }
+
+    .about-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .about-card.dark {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .about-card h3 {
+      margin: 0;
+      font-size: 27px;
+      letter-spacing: -.04em;
+    }
+
+    .about-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .about-card.dark p { color: #dbeafe; }
+
+    .about-focus {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .about-focus span {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .projects {
+      display: grid;
+      gap: 26px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: minmax(330px, .95fr) minmax(0, 1.05fr);
+      gap: 30px;
+      align-items: stretch;
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      transition: 180ms ease;
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .project-media {
+      position: relative;
+      min-height: 310px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(37,99,235,.14), rgba(124,58,237,.08)), var(--surface-2);
+    }
+
+    .project-image {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      min-height: 310px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .fallback {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+    }
+
+    .fallback-window {
+      width: 100%;
+      max-width: 360px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 14px 34px rgba(15,23,42,.12);
+    }
+
+    .dots {
+      display: flex;
+      gap: 7px;
+      margin-bottom: 15px;
+    }
+
+    .dots span {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #cbd5e1;
+    }
+
+    .fake-line {
+      height: 10px;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      background: #dbeafe;
+    }
+
+    .fake-line.short { width: 56%; }
+
+    .bars {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      height: 96px;
+      margin-top: 18px;
+      align-items: end;
+    }
+
+    .bars span {
+      border-radius: 8px 8px 3px 3px;
+      background: linear-gradient(180deg, #67e8f9, #3b82f6);
+    }
+
+    .bars span:nth-child(1) { height: 42%; }
+    .bars span:nth-child(2) { height: 66%; }
+    .bars span:nth-child(3) { height: 54%; }
+    .bars span:nth-child(4) { height: 84%; }
+    .bars span:nth-child(5) { height: 72%; }
+
+    .project-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--blue-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .project h3 {
+      margin: 15px 0 0;
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.1;
+      letter-spacing: -.05em;
+    }
+
+    .project-summary {
+      margin: 15px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.72;
+    }
+
+    .contributions {
+      display: grid;
+      gap: 9px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contributions li {
+      position: relative;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .contributions li::before {
+      content: "•";
+      position: absolute;
+      left: 3px;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .project .chips { margin-top: 18px; }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .experience-card {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 30px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .experience-company {
+      padding-right: 24px;
+      border-right: 1px solid var(--border);
+    }
+
+    .experience-company h3 {
+      margin: 0;
+      font-size: 25px;
+      letter-spacing: -.04em;
+    }
+
+    .experience-company p,
+    .experience-copy p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .experience-copy strong { color: var(--text); }
+
+    .experience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card h3 {
+      margin: 0 0 17px;
+      font-size: 23px;
+      letter-spacing: -.035em;
+    }
+
+    .skill-card:nth-child(1) h3 { color: var(--blue); }
+    .skill-card:nth-child(2) h3 { color: var(--purple); }
+    .skill-card:nth-child(3) h3 { color: var(--green); }
+
+    .education-grid,
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .edu-card,
+    .cert-card {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .edu-card { border-left: 6px solid var(--blue); }
+    .edu-card:nth-child(2) { border-left-color: var(--green); }
+
+    .edu-header,
+    .cert-header {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+    }
+
+    .logo-wrap {
+      width: 66px;
+      height: 66px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: #fff;
+    }
+
+    .logo {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+    }
+
+    .edu-card h3,
+    .cert-card h3 {
+      margin: 0;
+      font-size: 23px;
+      letter-spacing: -.035em;
+    }
+
+    .degree {
+      margin: 7px 0 0;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .meta {
+      margin: 11px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h2::after { display: none; }
+
+    .contact-copy {
+      max-width: 620px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .contact-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(130px, 1fr));
+      gap: 10px;
+    }
+
+    .footer {
+      padding: 28px 0 42px;
+      border-top: 1px solid var(--border);
+      color: var(--subtle);
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer a { color: var(--blue); font-weight: 800; }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .project,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card { max-width: 680px; }
+
+      .skills-grid { grid-template-columns: 1fr; }
+
+      .education-grid,
+      .cert-grid { grid-template-columns: 1fr; }
+
+      .experience-card { grid-template-columns: 1fr; }
+
+      .experience-company {
+        padding-right: 0;
+        padding-bottom: 20px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .project-media,
+      .project-image { min-height: 380px; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, 1120px); }
+      .section { padding: 58px 0; }
+
+      .menu-btn { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 14px;
+        right: 14px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open { display: flex; }
+      .language-select { width: 100%; margin: 4px 0 0; }
+
+      .hero { padding: 58px 0 42px; }
+      h1 { font-size: clamp(42px, 12vw, 58px); }
+
+      .cta-grid,
+      .contact-actions {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .profile-card { padding: 27px; }
+      .profile-top { align-items: flex-start; }
+      .profile-img { width: 104px; height: 104px; }
+
+      .project { padding: 18px; }
+      .project-media,
+      .project-image { min-height: 260px; }
+
+      .footer-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cta-grid,
+      .contact-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-top,
+      .edu-header,
+      .cert-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .meta-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-dot"></span>
+        Hyuntae Park
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+
+        <select class="language-select" onchange="window.location.href=this.value" aria-label="Language selector">
+          <option value="/" selected>English</option>
+          <option value="/kr/">한국어</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Analytics Engineering · Business Intelligence · AI Analytics</p>
+
+          <h1>
+            Turning business data into
+            <span class="accent">reliable decisions.</span>
+          </h1>
+
+          <p class="hero-copy">
+            I build <strong>data warehouses, KPI systems, SQL analytics,
+            and AI-powered data products</strong> that turn complex business data
+            into practical, decision-ready insights.
+          </p>
+
+          <div class="availability">
+            Seeking Data Analytics, Business Intelligence, and Analytics Engineering roles starting January 2027
+          </div>
+
+          <div class="cta-grid">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-outline" href="resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
+
+            <!-- Replace with your real LinkedIn profile URL. -->
+            <a class="btn btn-linkedin" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+
+            <a class="btn btn-dark" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="profile-top">
+            <img class="profile-img" src="img/profile.jpg" alt="Portrait of Hyuntae Park" />
+
+            <div>
+              <h2 class="profile-name">Hyuntae Park</h2>
+              <div class="profile-role">
+                Analytics Engineer<br />
+                Data Analytics · Data Warehousing · AI Analytics
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-meta">
+            <div class="meta-row">
+              <span class="meta-label">Education</span>
+              <span class="meta-value">Rutgers MITA</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Location</span>
+              <span class="meta-value">NY / NJ / Remote</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Core Stack</span>
+              <span class="meta-value">SQL · PostgreSQL · Python</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Availability</span>
+              <span class="meta-value">January 2027</span>
+            </div>
+          </div>
+
+          <div class="profile-tags">
+            <span class="chip">Data Warehousing</span>
+            <span class="chip">Business Intelligence</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">LLM Analytics</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Selected Work</p>
+          <h2>Featured Projects</h2>
+          <p class="lead">
+            Four projects demonstrating data modeling, SQL analytics,
+            business intelligence, full-stack development, and AI-assisted reporting.
+          </p>
+        </div>
+
+        <div class="projects">
+          <article class="project">
+            <div class="project-media">
+              <img
+                class="project-image"
+                src="img/retail-data-warehouse.jpg"
+                alt="Retail data warehouse architecture"
+                onload="this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none';"
+              />
+              <div class="fallback" aria-hidden="true">
+                <div class="fallback-window">
+                  <div class="dots"><span></span><span></span><span></span></div>
+                  <div class="fake-line"></div>
+                  <div class="fake-line short"></div>
+                  <div class="bars"><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="badge">Data Engineering</span>
+              <h3>End-to-End Retail Data Warehouse & Analytics</h3>
+              <p class="project-summary">
+                A PostgreSQL-based retail data platform with staging,
+                dimensional models, reusable transformations, validation,
+                and reporting-ready KPI marts.
+              </p>
+
+              <ul class="contributions">
+                <li>Built a staging → warehouse → mart architecture.</li>
+                <li>Designed star-schema fact and dimension models.</li>
+                <li>Standardized revenue, orders, customers, and AOV metrics.</li>
+                <li>Added reusable SQL transformations and data-quality checks.</li>
+              </ul>
+
+              <div class="chips">
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">SQL</span>
+                <span class="chip">ETL / ELT</span>
+                <span class="chip">Star Schema</span>
+                <span class="chip">Data Modeling</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn btn-dark" href="https://github.com/hyuntaepark-gh/End-To-End-Retail-Data-Warehouse" target="_blank" rel="noreferrer">
+                  Repository ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media">
+              <img
+                class="project-image"
+                src="img/ai-kpi-intelligence.jpg"
+                alt="AI Executive KPI Intelligence platform"
+                onload="this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none';"
+              />
+              <div class="fallback" aria-hidden="true">
+                <div class="fallback-window">
+                  <div class="dots"><span></span><span></span><span></span></div>
+                  <div class="fake-line"></div>
+                  <div class="fake-line short"></div>
+                  <div class="bars"><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="badge">AI Analytics</span>
+              <h3>AI Executive KPI Intelligence Platform</h3>
+              <p class="project-summary">
+                A production-style analytics application that converts
+                business questions into SQL-supported KPI insights,
+                driver analysis, and executive narratives.
+              </p>
+
+              <ul class="contributions">
+                <li>Designed an Agent → SQL → Driver Analysis → Narrative workflow.</li>
+                <li>Implemented KPI decomposition, anomaly detection, and fallback logic.</li>
+                <li>Built FastAPI services with PostgreSQL-backed analytics.</li>
+                <li>Generated decision-ready executive reporting narratives.</li>
+              </ul>
+
+              <div class="chips">
+                <span class="chip">FastAPI</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">LLM</span>
+                <span class="chip">KPI Design</span>
+                <span class="chip">Root-Cause Analysis</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn btn-dark" href="https://github.com/hyuntaepark-gh/AI-Executive-KPI-Intelligence-Micro-SaaS" target="_blank" rel="noreferrer">
+                  Repository ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media">
+              <img
+                class="project-image"
+                src="img/olist-sql-analytics.jpg"
+                alt="Olist SQL analytics project"
+                onload="this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none';"
+              />
+              <div class="fallback" aria-hidden="true">
+                <div class="fallback-window">
+                  <div class="dots"><span></span><span></span><span></span></div>
+                  <div class="fake-line"></div>
+                  <div class="fake-line short"></div>
+                  <div class="bars"><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="badge">SQL Analytics</span>
+              <h3>Olist Business KPI Analytics</h3>
+              <p class="project-summary">
+                A PostgreSQL analytics project focused on revenue drivers,
+                cohort retention, order lifecycle, delivery performance,
+                customer reviews, and seller risk.
+              </p>
+
+              <ul class="contributions">
+                <li>Built reusable SQL analyses for revenue and customer behavior.</li>
+                <li>Created cohort retention and lifecycle funnel analyses.</li>
+                <li>Connected delivery delays with customer-review outcomes.</li>
+                <li>Identified operational and seller-level risk patterns.</li>
+              </ul>
+
+              <div class="chips">
+                <span class="chip">Advanced SQL</span>
+                <span class="chip">Cohort Analysis</span>
+                <span class="chip">Funnel Analysis</span>
+                <span class="chip">Revenue Drivers</span>
+                <span class="chip">PostgreSQL</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn btn-dark" href="https://github.com/hyuntaepark-gh/olist-sql-analytics" target="_blank" rel="noreferrer">
+                  Repository ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media">
+              <img
+                class="project-image"
+                src="img/baseball-live-analytics.jpg"
+                alt="Baseball Live Analytics platform"
+                onload="this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none';"
+              />
+              <div class="fallback" aria-hidden="true">
+                <div class="fallback-window">
+                  <div class="dots"><span></span><span></span><span></span></div>
+                  <div class="fake-line"></div>
+                  <div class="fake-line short"></div>
+                  <div class="bars"><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="badge">Full-Stack Data Product</span>
+              <h3>Real-Time Baseball Operations & Analytics Platform</h3>
+              <p class="project-summary">
+                A live MLB analytics platform combining game tracking,
+                player and team intelligence, lineup visualization,
+                transactions, probable pitchers, and trade analysis.
+              </p>
+
+              <ul class="contributions">
+                <li>Integrated live MLB data into responsive game and analytics views.</li>
+                <li>Built player, team, roster, transaction, and trade intelligence pages.</li>
+                <li>Added live pitch-by-pitch and lineup-analysis experiences.</li>
+                <li>Developed PostgreSQL-backed FastAPI services and a React frontend.</li>
+              </ul>
+
+              <div class="chips">
+                <span class="chip">FastAPI</span>
+                <span class="chip">React</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">MLB APIs</span>
+                <span class="chip">Responsive UI</span>
+              </div>
+
+              <div class="project-actions">
+                <a class="btn btn-primary" href="https://baseball-live-analytics.onrender.com/" target="_blank" rel="noreferrer">
+                  Live Demo ↗
+                </a>
+
+                <!-- Replace with the real Baseball Live Analytics repository URL. -->
+                <a class="btn btn-outline" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">
+                  GitHub ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">About</p>
+          <h2>Business context meets technical execution.</h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card dark">
+            <h3>What I build</h3>
+            <p>
+              I create data warehouses, KPI systems, business intelligence solutions,
+              and AI-powered analytics applications designed for practical decision-making.
+            </p>
+
+            <div class="about-focus">
+              <span>Data Warehousing</span>
+              <span>Business Analytics</span>
+              <span>AI Data Products</span>
+            </div>
+          </article>
+
+          <article class="about-card">
+            <h3>How I approach analytics</h3>
+            <p>
+              My background in HR systems, operations, property management,
+              and cross-functional coordination helps me understand how businesses
+              use data in day-to-day decisions. I bring that perspective into
+              data modeling, KPI design, reporting, and analytics product development.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Professional Experience</p>
+          <h2>Business operations experience.</h2>
+          <p class="lead">
+            Prior experience that informs how I design analytics for real operational needs.
+          </p>
+        </div>
+
+        <article class="experience-card">
+          <div class="experience-company">
+            <h3>Grand SK Corporation</h3>
+            <p>East Rutherford, New Jersey</p>
+            <p>2021–2024</p>
+          </div>
+
+          <div class="experience-copy">
+            <p>
+              Worked across <strong>human resources, property management,
+              operations, internal systems, reporting, and vendor coordination</strong>.
+              The role required translating operational information into actions,
+              maintaining reliable records, supporting management decisions,
+              and coordinating across employees, vendors, and external agencies.
+            </p>
+
+            <div class="experience-tags">
+              <span class="chip">HR Systems</span>
+              <span class="chip">Operations</span>
+              <span class="chip">Property Management</span>
+              <span class="chip">Process Coordination</span>
+              <span class="chip">Business Reporting</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Core Skills</p>
+          <h2>Technical toolkit</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>Data</h3>
+            <div class="chips">
+              <span class="chip">SQL</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">Python</span>
+              <span class="chip">ETL / ELT</span>
+              <span class="chip">Data Modeling</span>
+              <span class="chip">Star Schema</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Analytics & BI</h3>
+            <div class="chips">
+              <span class="chip">KPI Design</span>
+              <span class="chip">Cohort Analysis</span>
+              <span class="chip">Funnel Analysis</span>
+              <span class="chip">Revenue Analysis</span>
+              <span class="chip">Tableau</span>
+              <span class="chip">Power BI</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Development & AI</h3>
+            <div class="chips">
+              <span class="chip">FastAPI</span>
+              <span class="chip">React</span>
+              <span class="chip">REST APIs</span>
+              <span class="chip">Streamlit</span>
+              <span class="chip">LLM Integration</span>
+              <span class="chip">GitHub</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Education</p>
+          <h2>Education</h2>
+        </div>
+
+        <div class="education-grid">
+          <article class="edu-card">
+            <div class="edu-header">
+              <div class="logo-wrap">
+                <img class="logo" src="img/rutgers-logo.png" alt="Rutgers University logo" onerror="this.parentElement.style.display='none';" />
+              </div>
+              <div>
+                <h3>Rutgers University</h3>
+                <p class="degree">M.S. in Information Technology & Analytics</p>
+              </div>
+            </div>
+            <p class="meta">
+              Data Engineering · Business Intelligence · Artificial Intelligence
+            </p>
+          </article>
+
+          <article class="edu-card">
+            <div class="edu-header">
+              <div class="logo-wrap">
+                <img class="logo" src="img/baruch-logo.png" alt="Baruch College logo" onerror="this.parentElement.style.display='none';" />
+              </div>
+              <div>
+                <h3>Baruch College</h3>
+                <p class="degree">BBA in Marketing Analytics</p>
+              </div>
+            </div>
+            <p class="meta">
+              Business Analytics · Marketing Analytics · Data-Driven Decision-Making
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Selected Credentials</p>
+          <h2>Featured certifications</h2>
+        </div>
+
+        <div class="cert-grid">
+          <article class="cert-card">
+            <div class="cert-header">
+              <div class="logo-wrap">
+                <img class="logo" src="img/google-analytics-logo.png" alt="Google Analytics logo" onerror="this.parentElement.style.display='none';" />
+              </div>
+              <div>
+                <h3>Google Analytics Certificate</h3>
+                <p class="degree">Skillshop</p>
+              </div>
+            </div>
+            <p class="meta">
+              Digital analytics, measurement, reporting, and business insight fundamentals.
+            </p>
+          </article>
+
+          <article class="cert-card">
+            <div class="cert-header">
+              <div class="logo-wrap">
+                <img class="logo" src="img/lvmh-logo.png" alt="LVMH logo" onerror="this.parentElement.style.display='none';" />
+              </div>
+              <div>
+                <h3>Operations & Supply Chain</h3>
+                <p class="degree">LVMH · Retail & Customer Experience</p>
+              </div>
+            </div>
+            <p class="meta">
+              Operations, supply chain, retail, and customer-experience foundations.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-soft">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <p class="kicker">Contact</p>
+            <h2>Let’s connect.</h2>
+            <p class="contact-copy">
+              Seeking Data Analytics, Business Intelligence,
+              and Analytics Engineering opportunities starting January 2027.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <!-- Replace with your real LinkedIn profile URL. -->
+            <a class="btn btn-linkedin" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="btn btn-dark" href="https://github.com/hyuntaepark-gh" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a class="btn btn-outline" href="mailto:hyuntae.park.j@gmail.com">Email</a>
+            <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Hyuntae Park · Analytics Engineering Portfolio</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+      menuBtn.textContent = isOpen ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 720) {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+      }
+    });
+  </script>
+</body>
+</html>
