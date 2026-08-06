@@ -1,0 +1,1861 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>박현태 | 애널리틱스 엔지니어</title>
+  <meta
+    name="description"
+    content="박현태의 데이터 웨어하우스, KPI 시스템, 비즈니스 인텔리전스 및 AI 분석 제품 포트폴리오입니다."
+  />
+
+  <meta property="og:title" content="박현태 | 애널리틱스 엔지니어" />
+  <meta
+    property="og:description"
+    content="데이터 웨어하우징 · 비즈니스 인텔리전스 · SQL 분석 · AI 데이터 제품"
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hyuntaepark-gh.github.io/kr/" />
+  <meta
+    property="og:image"
+    content="https://hyuntaepark-gh.github.io/img/portfolio-preview.jpg"
+  />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #0b0d12;
+      --muted: #475467;
+      --line: #d9dde4;
+      --blue: #2563eb;
+      --lime: #c8ff4d;
+      --soft: #f5f7fa;
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 78px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar-inner {
+      min-height: 68px;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .nav a:hover {
+      color: var(--blue);
+    }
+
+
+    .language-switcher {
+      position: relative;
+      justify-self: end;
+    }
+
+    .language-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .language-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      z-index: 120;
+      display: none;
+      min-width: 130px;
+      padding: 6px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      box-shadow: 5px 5px 0 var(--lime);
+    }
+
+    .language-switcher.open .language-menu {
+      display: grid;
+    }
+
+    .language-menu a {
+      padding: 10px 11px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .language-menu a:hover,
+    .language-menu a.active {
+      color: var(--ink);
+      background: var(--soft);
+    }
+
+    .button,
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--ink);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: 150ms ease;
+    }
+
+    .button.dark,
+    .project-link.primary {
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    .button:hover,
+    .project-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 5px 5px 0 var(--lime);
+    }
+
+    .hero {
+      padding: 68px 0 48px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+    }
+
+    .hero-grid {
+      display: block;
+    }
+
+    .hero-main {
+      max-width: 980px;
+    }
+
+    .eyebrow,
+    .section-label {
+      margin: 0 0 17px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: none;
+      font-size: clamp(66px, 8.5vw, 120px);
+      line-height: 0.87;
+      letter-spacing: -0.08em;
+      font-weight: 900;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    .hero-name-ko {
+      color: var(--ink);
+      font-size: 0.94em;
+      letter-spacing: -0.095em;
+      line-height: 0.94;
+    }
+
+    .hero-name-en {
+      margin-top: 12px;
+      color: var(--blue);
+      font-size: 0.24em;
+      line-height: 1;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .project-title-en,
+    .career-official-name,
+    .education-name-en {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 700;
+      letter-spacing: 0.025em;
+    }
+
+    .project-title-en {
+      margin: 5px 0 0;
+    }
+
+    .career-official-name {
+      margin-top: 4px;
+    }
+
+    .education-name-en {
+      margin-top: 3px;
+    }
+
+    .hero-copy {
+      max-width: 790px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .hero-copy strong {
+      color: var(--ink);
+    }
+
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 36px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.055em;
+      text-transform: uppercase;
+    }
+
+    .hero-meta-item.available {
+      border-color: var(--lime);
+      background: var(--lime);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #16864b;
+      box-shadow: 0 0 0 4px rgba(22, 134, 75, 0.12);
+    }
+
+    #projects .section-grid {
+      padding-top: 54px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .social-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 10px 17px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+      transition:
+        transform 150ms ease,
+        box-shadow 150ms ease,
+        background-color 150ms ease,
+        border-color 150ms ease;
+    }
+
+    .social-link:hover,
+    .resume-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+    }
+
+    .social-icon {
+      width: 17px;
+      height: 17px;
+      flex: 0 0 17px;
+    }
+
+    .social-icon-fill {
+      fill: currentColor;
+    }
+
+    .social-arrow {
+      margin-left: 1px;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .social-link.linkedin {
+      border-color: #0a66c2;
+      background: #0a66c2;
+      color: #ffffff;
+    }
+
+    .social-link.linkedin:hover {
+      background: #0959a8;
+      border-color: #0959a8;
+    }
+
+    .social-link.github {
+      border-color: #24292f;
+      background: #24292f;
+      color: #ffffff;
+    }
+
+    .social-link.github:hover {
+      background: #111418;
+      border-color: #111418;
+    }
+
+    .social-link.email {
+      border-color: #ea4335;
+      background: #ffffff;
+      color: #c5221f;
+    }
+
+    .social-link.email:hover {
+      background: #fff5f4;
+      border-color: #c5221f;
+    }
+
+    .resume-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 10px 17px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 999px;
+      background: transparent;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition:
+        transform 150ms ease,
+        box-shadow 150ms ease,
+        border-color 150ms ease,
+        background-color 150ms ease;
+    }
+
+    .resume-link:hover {
+      border-color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .button {
+      min-height: 46px;
+      padding: 12px 16px;
+    }
+
+    section {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 48px;
+      padding: 68px 0;
+    }
+
+    .section-label {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      max-width: 850px;
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .projects-list {
+      border-top: 1px solid var(--ink);
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr) 340px;
+      gap: 30px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .project-index {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 31px;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 28px;
+      padding: 6px 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .meta-icon {
+      width: 13px;
+      height: 13px;
+      flex: 0 0 13px;
+      fill: currentColor;
+    }
+
+    .meta-type {
+      color: #174ea6;
+      background: #e8f0fe;
+      border-color: #aecbfa;
+    }
+
+    .meta-scope {
+      color: #6941c6;
+      background: #f1ebff;
+      border-color: #d6c7ff;
+    }
+
+    .meta-year {
+      color: #087443;
+      background: #e9f9f1;
+      border-color: #a9e5c8;
+    }
+
+    .project-copy {
+      max-width: 670px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      line-height: 1.68;
+    }
+
+    .project-copy,
+    .project-points,
+    .strength-description,
+    .career-description,
+    .education-degree,
+    .section-intro,
+    .contact-copy {
+      color: #475467;
+    }
+
+    .project-points {
+      display: grid;
+      gap: 5px;
+      margin: 15px 0 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .project-points li::before {
+      content: "— ";
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 17px;
+    }
+
+    .stack span {
+      padding: 7px 9px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 19px;
+    }
+
+    .project-link {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      transition:
+        transform 150ms ease,
+        box-shadow 150ms ease,
+        background-color 150ms ease,
+        border-color 150ms ease;
+    }
+
+    .project-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+    }
+
+    .project-link:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    .project-link {
+      gap: 8px;
+    }
+
+    .project-button-icon {
+      width: 15px;
+      height: 15px;
+      flex: 0 0 15px;
+      fill: currentColor;
+    }
+
+    .project-thumb {
+      position: relative;
+      overflow: hidden;
+      min-height: 215px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+    }
+
+    .project-image-link {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: 215px;
+      overflow: hidden;
+      background: #ffffff;
+      cursor: zoom-in;
+    }
+
+    .project-image-link::after {
+      content: "원본 이미지 보기 ↗";
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      z-index: 3;
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(11, 13, 18, 0.88);
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(5px);
+      transition:
+        opacity 160ms ease,
+        transform 160ms ease;
+      pointer-events: none;
+    }
+
+    .project-image-link:hover::after,
+    .project-image-link:focus-visible::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-image-link:focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    .project-image {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 215px;
+      display: block;
+      background: #ffffff;
+      transition: transform 180ms ease;
+    }
+
+    .project-image-link:hover .project-image,
+    .project-image-link:focus-visible .project-image {
+      transform: scale(1.035);
+    }
+
+    /* Product UI: crop tightly around the dashboard. */
+    .project-image-baseball {
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* Architecture diagram: preserve the complete pipeline. */
+    .project-image-retail {
+      object-fit: contain;
+      object-position: center;
+      padding: 10px;
+    }
+
+    /* Emphasize the natural-language request and executive response. */
+    .project-image-ai {
+      object-fit: cover;
+      object-position: center 68%;
+    }
+
+    /* Keep cohort rows and m0–m6 columns prominent. */
+    .project-image-olist {
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .thumb-fallback {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .strength-list {
+      border-top: 1px solid var(--ink);
+    }
+
+    .strength-row {
+      display: grid;
+      grid-template-columns: 70px 230px 1fr;
+      gap: 26px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .strength-number {
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .strength-name {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.035em;
+    }
+
+    .strength-description {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .career-list {
+      border-top: 1px solid var(--ink);
+    }
+
+    .career-row {
+      display: grid;
+      grid-template-columns: 220px 1fr 130px;
+      gap: 28px;
+      padding: 27px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+
+    .career-company-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .career-logo-wrap {
+      width: 68px;
+      height: 68px;
+      flex: 0 0 68px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .career-logo {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+    }
+
+    .career-company-copy {
+      min-width: 0;
+    }
+
+    .career-company {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -0.035em;
+    }
+
+    .career-company-note {
+      display: block;
+      margin-top: 4px;
+      color: var(--blue);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+
+    .career-role-title {
+      display: block;
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.55;
+    }
+
+    .career-description {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .career-focus {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+    }
+
+    .career-highlights {
+      display: grid;
+      gap: 8px;
+      margin: 13px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .career-highlights li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    .career-highlights li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .career-period {
+      text-align: right;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .skills-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 900px;
+    }
+
+    .skill {
+      padding: 11px 14px;
+      border: 1px solid var(--ink);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .skill:nth-child(3n + 1) {
+      background: var(--lime);
+    }
+
+    .skill:nth-child(3n + 2) {
+      background: #dce8ff;
+    }
+
+    .skill:nth-child(3n) {
+      background: #efe8ff;
+    }
+
+    .education-list {
+      border-top: 1px solid var(--ink);
+    }
+
+    .education-row {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 22px;
+      align-items: center;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .education-logo {
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .education-logo img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+
+    .education-name {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.035em;
+    }
+
+    .education-degree {
+      margin-top: 6px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .contact {
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    .contact .section-label {
+      color: var(--lime);
+    }
+
+    .contact-title {
+      margin: 0;
+      max-width: 850px;
+      font-size: clamp(50px, 6vw, 88px);
+      line-height: 0.94;
+      letter-spacing: -0.07em;
+    }
+
+    .contact-copy {
+      max-width: 650px;
+      margin: 22px 0 0;
+      color: #aab4c2;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .contact-actions a:not(.social-link):not(.resume-link) {
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      background: var(--ink);
+      color: #7f8895;
+      padding: 0 0 32px;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 23px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    @media (max-width: 980px) {
+      .topbar-inner {
+        grid-template-columns: 1fr auto;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .language-button {
+        min-height: 36px;
+        padding: 8px 10px;
+      }
+
+      .hero-grid,
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-label {
+        position: static;
+      }
+
+      .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project {
+        grid-template-columns: 60px 1fr;
+      }
+
+      .project-thumb {
+        grid-column: 2;
+      }
+
+      .career-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .career-period {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .hero {
+        padding: 48px 0 38px;
+      }
+
+      .hero-meta {
+        align-items: stretch;
+      }
+
+      .hero-meta-item {
+        width: fit-content;
+      }
+
+
+      h1 {
+        font-size: clamp(54px, 17vw, 76px);
+      }
+
+      .section-grid {
+        padding: 60px 0;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+      }
+
+      .project-thumb {
+        grid-column: 1;
+      }
+
+      .strength-row {
+        grid-template-columns: 46px 1fr;
+      }
+
+      .strength-description {
+        grid-column: 2;
+      }
+
+      .contact-title {
+        font-size: clamp(46px, 15vw, 68px);
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top">박현태</a>
+
+      <nav class="nav">
+        <a href="#projects">프로젝트</a>
+        <a href="#strength">전문 분야</a>
+        <a href="#career">경력</a>
+        <a href="#education">학력</a>
+        <a href="#skills">기술 스택</a>
+      </nav>
+
+      <div class="language-switcher" id="languageSwitcher">
+        <button
+          class="language-button"
+          id="languageButton"
+          type="button"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          한국어 ▾
+        </button>
+
+        <div class="language-menu" role="menu">
+          <a href="/">English</a>
+          <a class="active" href="/kr/">한국어</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-main">
+          <p class="eyebrow">애널리틱스 엔지니어 · 비즈니스 인텔리전스 · 데이터 제품</p>
+
+          <h1>
+            <span class="hero-name-ko">박현태</span>
+            <span class="hero-name-en">HYUNTAE PARK</span>
+          </h1>
+
+          <p class="hero-copy">
+            저는 <strong>데이터 웨어하우스, KPI 시스템, SQL 분석 및 AI 기반 제품</strong>을 구축해
+            운영 데이터를 신뢰할 수 있는 비즈니스 의사결정으로 연결합니다.
+          </p>
+
+          <div class="hero-meta" aria-label="입사 가능 시점 및 근무 지역">
+            <span class="hero-meta-item available">
+              <span class="status-dot" aria-hidden="true"></span>
+              2027년 1월 입사 가능
+            </span>
+
+            <span class="hero-meta-item">
+              뉴욕 · 뉴저지 · 원격
+            </span>
+          </div>
+
+          <div class="hero-actions">
+            <a
+              class="social-link linkedin"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg class="social-icon social-icon-fill" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM3.56 9h3.55v11.45H3.56V9Z"/>
+              </svg>
+              <span>링크드인</span>
+              <span class="social-arrow">↗</span>
+            </a>
+
+            <a
+              class="social-link github"
+              href="https://github.com/hyuntaepark-gh"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg class="social-icon social-icon-fill" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .7C5.65.7.5 5.85.5 12.2c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55v-2.02c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.98 10.98 0 0 1 5.75 0c2.19-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16v3.07c0 .3.21.66.79.55a11.51 11.51 0 0 0 7.85-10.91C23.5 5.85 18.35.7 12 .7Z"/>
+              </svg>
+              <span>깃허브</span>
+              <span class="social-arrow">↗</span>
+            </a>
+
+            <a class="social-link email" href="mailto:hyuntae.park.j@gmail.com">
+              <svg class="social-icon social-icon-fill" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+              </svg>
+              <span>이메일</span>
+              <span class="social-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap section-grid">
+        <div class="section-label">01 / 프로젝트</div>
+
+        <div>
+          <h2 class="section-title">대표 프로젝트.</h2>
+          <p class="section-intro">
+            데이터 엔지니어링, 비즈니스 인텔리전스,
+            애널리틱스 엔지니어링 및 AI 제품 개발 역량을 보여주는
+            대표 프로젝트입니다.
+          </p>
+
+          <div class="projects-list">
+<article class="project">
+              <div class="project-index">01</div>
+
+              <div>
+                <h3 class="project-title">실시간 야구 운영·분석 플랫폼</h3>
+                <div class="project-title-en">Real-Time Baseball Operations & Analytics Platform</div>
+
+                <div class="project-meta">
+                  <span class="meta-badge meta-type">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm10 0h6v6h-6v-6Z"/>
+                  </svg>
+                    <span>풀스택 데이터 제품</span>
+                  </span>
+
+                  <span class="meta-badge meta-scope">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0H5Z"/>
+                  </svg>
+                    <span>개인 프로젝트</span>
+                  </span>
+
+                  <span class="meta-badge meta-year">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 2h2v2h6V2h2v2h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3V2Zm13 8H4v10h16V10ZM4 8h16V6H4v2Z"/>
+                  </svg>
+                    <span>2026</span>
+                  </span>
+                </div>
+
+                <p class="project-copy">
+                  경기 추적, 선수 인텔리전스, 팀 데이터, 라인업, 트랜잭션 및 트레이드 정보를 통합한 실시간 MLB 분석 제품입니다.
+                </p>
+
+                <ul class="project-points">
+                  <li>실시간 MLB API를 반응형 분석 화면에 통합</li>
+                  <li>선수, 팀, 로스터 및 트랜잭션 기능 구축</li>
+                  <li>FastAPI 서비스와 React 프론트엔드 개발</li>
+                </ul>
+
+                <div class="stack">
+                  <span>FastAPI</span>
+                  <span>React</span>
+                  <span>PostgreSQL</span>
+                  <span>MLB APIs</span>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    class="project-link primary"
+                    href="https://baseball-live-analytics.onrender.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <svg class="project-button-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1.7 6.1 5.8 3.9-5.8 3.9V8.1Z"/>
+                </svg>
+                <span>라이브 데모 ↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-thumb">
+                <a
+
+                  class="project-image-link"
+
+                  href="../img/baseball-live-analytics.jpg"
+
+                  target="_blank"
+
+                  rel="noreferrer"
+
+                  aria-label="Baseball Live Analytics 원본 이미지 새 창에서 보기"
+
+                >
+
+                  <img
+
+                    src="../img/baseball-live-analytics.jpg"
+                  alt="Baseball Live Analytics"
+
+                    class="project-image project-image-baseball"
+
+                    loading="lazy"
+
+                    onload="this.closest('.project-thumb').querySelector('.thumb-fallback').style.display='none';"
+
+                    onerror="this.closest('.project-image-link').style.display='none';"
+
+                  />
+
+                </a>
+                <div class="thumb-fallback">Live Analytics</div>
+              </div>
+            </article>
+
+<article class="project">
+              <div class="project-index">02</div>
+
+              <div>
+                <h3 class="project-title">엔드투엔드 리테일 데이터 웨어하우스·분석</h3>
+                <div class="project-title-en">End-to-End Retail Data Warehouse & Analytics</div>
+
+                <div class="project-meta">
+                  <span class="meta-badge meta-type">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm10 0h6v6h-6v-6Z"/>
+                  </svg>
+                    <span>데이터 엔지니어링</span>
+                  </span>
+
+                  <span class="meta-badge meta-scope">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0H5Z"/>
+                  </svg>
+                    <span>개인 프로젝트</span>
+                  </span>
+
+                  <span class="meta-badge meta-year">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 2h2v2h6V2h2v2h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3V2Zm13 8H4v10h16V10ZM4 8h16V6H4v2Z"/>
+                  </svg>
+                    <span>2026</span>
+                  </span>
+                </div>
+
+                <p class="project-copy">
+                  원천 리테일 데이터를 리포팅 가능한 팩트 테이블, 차원 테이블 및 KPI 마트로 표준화한 PostgreSQL 데이터 웨어하우스입니다.
+                </p>
+
+                <ul class="project-points">
+                  <li>스테이징 → 웨어하우스 → 마트 구조 구축</li>
+                  <li>스타 스키마 팩트 및 차원 모델 설계</li>
+                  <li>매출, 주문, 고객 및 AOV 지표 표준화</li>
+                </ul>
+
+                <div class="stack">
+                  <span>PostgreSQL</span>
+                  <span>SQL</span>
+                  <span>ETL / ELT</span>
+                  <span>Star Schema</span>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    class="project-link primary"
+                    href="https://github.com/hyuntaepark-gh/End-To-End-Retail-Data-Warehouse"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <svg class="project-button-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 .7C5.65.7.5 5.85.5 12.2c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55v-2.02c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.98 10.98 0 0 1 5.75 0c2.19-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16v3.07c0 .3.21.66.79.55a11.51 11.51 0 0 0 7.85-10.91C23.5 5.85 18.35.7 12 .7Z"/>
+                </svg>
+                <span>GitHub 저장소 ↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-thumb">
+                <a
+
+                  class="project-image-link"
+
+                  href="../img/retail-data-warehouse.jpg"
+
+                  target="_blank"
+
+                  rel="noreferrer"
+
+                  aria-label="Retail Data Warehouse architecture 원본 이미지 새 창에서 보기"
+
+                >
+
+                  <img
+
+                    src="../img/retail-data-warehouse.jpg"
+                  alt="Retail Data Warehouse architecture"
+
+                    class="project-image project-image-retail"
+
+                    loading="lazy"
+
+                    onload="this.closest('.project-thumb').querySelector('.thumb-fallback').style.display='none';"
+
+                    onerror="this.closest('.project-image-link').style.display='none';"
+
+                  />
+
+                </a>
+                <div class="thumb-fallback">Warehouse Architecture</div>
+              </div>
+            </article>
+
+<article class="project">
+              <div class="project-index">03</div>
+
+              <div>
+                <h3 class="project-title">AI 기반 경영진 KPI 인텔리전스 플랫폼</h3>
+                <div class="project-title-en">AI Executive KPI Intelligence Platform</div>
+
+                <div class="project-meta">
+                  <span class="meta-badge meta-type">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm10 0h6v6h-6v-6Z"/>
+                  </svg>
+                    <span>AI 분석</span>
+                  </span>
+
+                  <span class="meta-badge meta-scope">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0H5Z"/>
+                  </svg>
+                    <span>개인 프로젝트</span>
+                  </span>
+
+                  <span class="meta-badge meta-year">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 2h2v2h6V2h2v2h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3V2Zm13 8H4v10h16V10ZM4 8h16V6H4v2Z"/>
+                  </svg>
+                    <span>2026</span>
+                  </span>
+                </div>
+
+                <p class="project-copy">
+                  비즈니스 질문과 KPI 변화를 SQL 기반 원인 분석과 경영진용 설명으로 변환하는 분석 애플리케이션입니다.
+                </p>
+
+                <ul class="project-points">
+                  <li>Agent → SQL → 원인 분석 워크플로 설계</li>
+                  <li>KPI 분해 및 이상 탐지 구현</li>
+                  <li>PostgreSQL 기반 FastAPI 분석 서비스 구축</li>
+                </ul>
+
+                <div class="stack">
+                  <span>FastAPI</span>
+                  <span>PostgreSQL</span>
+                  <span>LLM</span>
+                  <span>KPI Design</span>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    class="project-link primary"
+                    href="https://github.com/hyuntaepark-gh/AI-Executive-KPI-Intelligence-Micro-SaaS"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <svg class="project-button-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 .7C5.65.7.5 5.85.5 12.2c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55v-2.02c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.98 10.98 0 0 1 5.75 0c2.19-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16v3.07c0 .3.21.66.79.55a11.51 11.51 0 0 0 7.85-10.91C23.5 5.85 18.35.7 12 .7Z"/>
+                </svg>
+                <span>GitHub 저장소 ↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-thumb">
+                <a
+
+                  class="project-image-link"
+
+                  href="../img/ai-kpi-intelligence.jpg"
+
+                  target="_blank"
+
+                  rel="noreferrer"
+
+                  aria-label="AI Executive KPI Intelligence platform 원본 이미지 새 창에서 보기"
+
+                >
+
+                  <img
+
+                    src="../img/ai-kpi-intelligence.jpg"
+                  alt="AI Executive KPI Intelligence platform"
+
+                    class="project-image project-image-ai"
+
+                    loading="lazy"
+
+                    onload="this.closest('.project-thumb').querySelector('.thumb-fallback').style.display='none';"
+
+                    onerror="this.closest('.project-image-link').style.display='none';"
+
+                  />
+
+                </a>
+                <div class="thumb-fallback">AI KPI Platform</div>
+              </div>
+            </article>
+
+<article class="project">
+              <div class="project-index">04</div>
+
+              <div>
+                <h3 class="project-title">Olist 비즈니스 KPI 분석</h3>
+                <div class="project-title-en">Olist Business KPI Analytics</div>
+
+                <div class="project-meta">
+                  <span class="meta-badge meta-type">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm10 0h6v6h-6v-6Z"/>
+                  </svg>
+                    <span>SQL 분석</span>
+                  </span>
+
+                  <span class="meta-badge meta-scope">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0H5Z"/>
+                  </svg>
+                    <span>개인 프로젝트</span>
+                  </span>
+
+                  <span class="meta-badge meta-year">
+                    <svg class="meta-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 2h2v2h6V2h2v2h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3V2Zm13 8H4v10h16V10ZM4 8h16V6H4v2Z"/>
+                  </svg>
+                    <span>2026</span>
+                  </span>
+                </div>
+
+                <p class="project-copy">
+                  매출 동인, 고객 유지율, 주문 생애주기, 배송 성과 및 판매자 리스크를 분석한 PostgreSQL 프로젝트입니다.
+                </p>
+
+                <ul class="project-points">
+                  <li>코호트 유지율 및 생애주기 퍼널 분석 구축</li>
+                  <li>배송 지연과 고객 리뷰 결과 연결</li>
+                  <li>판매자 및 운영 리스크 패턴 식별</li>
+                </ul>
+
+                <div class="stack">
+                  <span>Advanced SQL</span>
+                  <span>Cohort Analysis</span>
+                  <span>Funnel Analysis</span>
+                  <span>PostgreSQL</span>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    class="project-link primary"
+                    href="https://github.com/hyuntaepark-gh/olist-sql-analytics"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <svg class="project-button-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 .7C5.65.7.5 5.85.5 12.2c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55v-2.02c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.98 10.98 0 0 1 5.75 0c2.19-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16v3.07c0 .3.21.66.79.55a11.51 11.51 0 0 0 7.85-10.91C23.5 5.85 18.35.7 12 .7Z"/>
+                </svg>
+                <span>GitHub 저장소 ↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="project-thumb">
+                <a
+
+                  class="project-image-link"
+
+                  href="../img/olist-sql-analytics.jpg"
+
+                  target="_blank"
+
+                  rel="noreferrer"
+
+                  aria-label="Olist SQL 분석 원본 이미지 새 창에서 보기"
+
+                >
+
+                  <img
+
+                    src="../img/olist-sql-analytics.jpg"
+                  alt="Olist SQL 분석"
+
+                    class="project-image project-image-olist"
+
+                    loading="lazy"
+
+                    onload="this.closest('.project-thumb').querySelector('.thumb-fallback').style.display='none';"
+
+                    onerror="this.closest('.project-image-link').style.display='none';"
+
+                  />
+
+                </a>
+                <div class="thumb-fallback">SQL 분석</div>
+              </div>
+            </article>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strength">
+      <div class="wrap section-grid">
+        <div class="section-label">02 / 전문 분야</div>
+
+        <div>
+          <h2 class="section-title">집중 분야.</h2>
+
+          <div class="strength-list">
+            <article class="strength-row">
+              <div class="strength-number">01</div>
+              <div class="strength-name">데이터 기반</div>
+              <div class="strength-description">
+                차원 모델링, 스테이징 레이어, 스타 스키마, 재사용 가능한 SQL 변환 및 리포팅용 KPI 마트를 구축합니다.
+              </div>
+            </article>
+
+            <article class="strength-row">
+              <div class="strength-number">02</div>
+              <div class="strength-name">비즈니스 분석</div>
+              <div class="strength-description">
+                매출 동인, 코호트, 퍼널, 운영 지표, 비즈니스 리포팅 및 근본 원인 분석을 수행합니다.
+              </div>
+            </article>
+
+            <article class="strength-row">
+              <div class="strength-number">03</div>
+              <div class="strength-name">분석 제품</div>
+              <div class="strength-description">
+                FastAPI 서비스, 반응형 인터페이스, 실시간 API 및 AI 보조 리포팅 워크플로를 개발합니다.
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="career">
+      <div class="wrap section-grid">
+        <div class="section-label">03 / 경력</div>
+
+        <div>
+          <h2 class="section-title">주요 경력.</h2>
+
+          <div class="career-list">
+            <article class="career-row">
+              <div class="career-company-block">
+                <div class="career-logo-wrap">
+                  <img
+                    class="career-logo"
+                    src="../img/grandsk-logo.png"
+                    alt="그랜드 에스케이 / H Mart 로고"
+                    onerror="this.parentElement.style.display='none';"
+                  />
+                </div>
+
+                <div class="career-company-copy">
+                  <div class="career-company">
+                    <span>그랜드</span>
+                    <span style="display:block;">에스케이</span>
+                    <span class="career-company-note">H마트</span>
+                    <span class="career-official-name">Grand SK Corp.</span>
+                    <span class="career-role-title">
+                      인사 운영 어시스턴트 매니저 /<br />
+                      자산관리 어시스턴트
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="career-description">
+                <div class="career-focus">
+                  인사 운영 · HRIS 및 리포팅 · 자산관리
+                </div>
+
+                <ul class="career-highlights">
+                  <li>
+                    HRIS와 직원 기록을 관리하고 근태, 휴가, 복리후생,
+                    온보딩, 채용 및 급여 지원 프로세스를 운영했습니다.
+                  </li>
+                  <li>
+                    직원 성과 데이터와 운영 지표를 분석해
+                    경영진 보고와 의사결정을 지원했습니다.
+                  </li>
+                  <li>
+                    시설 유지보수, 공급업체, 인허가, 보안 시스템,
+                    차량 운영 및 사무실·창고 개선 프로젝트를 조율했습니다.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="career-period">2021–2022</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <section id="education">
+      <div class="wrap section-grid">
+        <div class="section-label">04 / 학력</div>
+
+        <div>
+          <h2 class="section-title">학업 배경.</h2>
+
+          <div class="education-list">
+            <article class="education-row">
+              <div class="education-logo">
+                <img
+                  src="../img/rutgers-logo.png"
+                  alt="럿거스대학교 로고"
+                  onerror="this.parentElement.style.display='none';"
+                />
+              </div>
+
+              <div>
+                <div class="education-name">럿거스대학교</div>
+                <div class="education-name-en">Rutgers University</div>
+                <div class="education-degree">
+                  정보기술 및 분석 석사
+                </div>
+              </div>
+            </article>
+
+            <article class="education-row">
+              <div class="education-logo">
+                <img
+                  src="../img/baruch-logo.png"
+                  alt="버룩칼리지 로고"
+                  onerror="this.parentElement.style.display='none';"
+                />
+              </div>
+
+              <div>
+                <div class="education-name">버룩칼리지</div>
+                <div class="education-name-en">Baruch College</div>
+                <div class="education-degree">
+                  마케팅 분석 경영학사
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap section-grid">
+        <div class="section-label">05 / 도구</div>
+
+        <div>
+          <h2 class="section-title">기술 스택.</h2>
+
+          <div class="skills-cloud">
+            <span class="skill">SQL</span>
+            <span class="skill">PostgreSQL</span>
+            <span class="skill">Python</span>
+            <span class="skill">ETL / ELT</span>
+            <span class="skill">Data Modeling</span>
+            <span class="skill">Star Schema</span>
+            <span class="skill">KPI Design</span>
+            <span class="skill">Power BI</span>
+            <span class="skill">Tableau</span>
+            <span class="skill">FastAPI</span>
+            <span class="skill">React</span>
+            <span class="skill">REST APIs</span>
+            <span class="skill">Streamlit</span>
+            <span class="skill">LLM Integration</span>
+            <span class="skill">GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap section-grid">
+        <div class="section-label">06 / 연락</div>
+
+        <div>
+          <h2 class="contact-title">
+            연락하기.
+          </h2>
+
+          <p class="contact-copy">
+            애널리틱스 엔지니어링, 비즈니스 인텔리전스,
+            데이터 제품 기회에 관한 대화를 환영합니다.
+          </p>
+
+          <div class="contact-actions">
+            <a
+              class="social-link linkedin"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg class="social-icon social-icon-fill" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM3.56 9h3.55v11.45H3.56V9Z"/>
+              </svg>
+              <span>링크드인</span>
+              <span class="social-arrow">↗</span>
+            </a>
+
+            <a
+              class="social-link github"
+              href="https://github.com/hyuntaepark-gh"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg class="social-icon social-icon-fill" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .7C5.65.7.5 5.85.5 12.2c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55v-2.02c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.98 10.98 0 0 1 5.75 0c2.19-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16v3.07c0 .3.21.66.79.55a11.51 11.51 0 0 0 7.85-10.91C23.5 5.85 18.35.7 12 .7Z"/>
+              </svg>
+              <span>깃허브</span>
+              <span class="social-arrow">↗</span>
+            </a>
+
+            <a
+              class="social-link email"
+              href="mailto:hyuntae.park.j@gmail.com"
+            >
+              <svg class="social-icon social-icon-fill" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+              </svg>
+              <span>이메일</span>
+              <span class="social-arrow">↗</span>
+            </a>
+
+            <a
+              class="resume-link"
+              href="../resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>이력서</span>
+              <span class="social-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> 박현태</span>
+      <span>애널리틱스 엔지니어 포트폴리오</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const languageSwitcher = document.getElementById("languageSwitcher");
+    const languageButton = document.getElementById("languageButton");
+
+    languageButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const isOpen = languageSwitcher.classList.toggle("open");
+      languageButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.addEventListener("click", () => {
+      languageSwitcher.classList.remove("open");
+      languageButton.setAttribute("aria-expanded", "false");
+    });
+  </script>
+</body>
+</html>
